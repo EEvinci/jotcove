@@ -24,6 +24,8 @@
 	<string>15.0</string>
 	<key>LSUIElement</key>
 	<true/>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright © 2026 Evinci. Third-party notices included.</string>
 	<key>NSHighResolutionCapable</key>
 	<true/>
 </dict>

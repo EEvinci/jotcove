@@ -28,7 +28,7 @@ enum L {
     static let pairs: [(String, String)] = [
         // Personal stationery
         ("灵感，留在手边。", "Keep inspiration close."),
-        ("可可手记", "Cocoa notes"),
+        ("Evinci 开发与维护", "Developed and maintained by Evinci"),
         // Capture chrome
         ("复制", "Copy"), ("识别文字", "Recognize Text"), ("撤销 ⌘Z", "Undo ⌘Z"), ("取消 ⎋", "Cancel ⎋"),
         ("完成 ⏎ · 复制到剪贴板", "Done ⏎ · copy to clipboard"), ("小", "S"), ("中", "M"), ("大", "L"),

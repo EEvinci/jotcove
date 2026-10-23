@@ -48,8 +48,8 @@ struct SettingsPane: View {
                             HStack(spacing: 12) {
                                 IdentityPortrait(size: 44)
                                 VStack(alignment: .leading, spacing: 4) {
-                                    Text("Pastory · Evinci").font(.serif(17, bold: true)).foregroundStyle(Color.ink)
-                                    Text("可可手记".l).font(.serif(12)).foregroundStyle(Color.inkMuted)
+                                    Text("Pastory").font(.serif(17, bold: true)).foregroundStyle(Color.ink)
+                                    Text("Evinci 开发与维护".l).font(.serif(12)).foregroundStyle(Color.inkMuted)
                                 }
                                 Spacer()
                                 HStack(spacing: 5) {

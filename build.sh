@@ -34,6 +34,7 @@ cp Resources/Info.plist "$APP/Contents/Info.plist"
 [ -d Resources/Fonts ] && cp -R Resources/Fonts "$APP/Contents/Resources/Fonts"
 [ -d Resources/Identity ] && cp -R Resources/Identity "$APP/Contents/Resources/Identity"
 cp LICENSE "$APP/Contents/Resources/LICENSE"
+cp THIRD_PARTY_NOTICES.md "$APP/Contents/Resources/THIRD_PARTY_NOTICES.md"
 for f in AppIcon.icns Logo.png Pushpin.png MenuIcon.png MenuIcon@2x.png; do
     [ -f "Resources/$f" ] && cp "Resources/$f" "$APP/Contents/Resources/$f"
 done

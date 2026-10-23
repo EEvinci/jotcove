@@ -74,8 +74,6 @@ struct ShelfView: View {
         VStack(alignment: .leading, spacing: 0) {
             VStack(alignment: .leading, spacing: 0) {
                 Text("Pastory").font(.script(40)).foregroundStyle(Color.onBrown)
-                Text("EVINCI’S EDITION").font(.system(size: 8, weight: .medium, design: .monospaced))
-                    .tracking(1.4).foregroundStyle(Color.onBrownMuted)
             }
             .padding(.leading, 22).padding(.top, 10).padding(.bottom, 18)
             navRow(icon: "clipboard", "剪贴板".l, active: !model.showSettings) { model.showSettings = false }

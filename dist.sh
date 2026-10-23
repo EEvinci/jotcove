@@ -27,6 +27,7 @@ if [ -n "$NOTARY_PROFILE" ]; then
 fi
 cat > dist/首次打开.txt <<'TXT'
 Pastory 首次打开说明
+由 Evinci 开发与维护。
 
 需要 macOS 15 (Sequoia) 或更新；Intel 和 Apple 芯片的 Mac 都可以。
 
@@ -48,6 +49,7 @@ Pastory 首次打开说明
 ---------------------------------------------------------------- English
 
 Pastory — first launch
+Developed and maintained by Evinci.
 Requires macOS 15 (Sequoia) or later; Intel and Apple silicon.
 
 1. Unzip and drag Pastory.app into Applications.
