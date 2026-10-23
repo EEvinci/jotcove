@@ -1,0 +1,325 @@
+{
+  "audit_date": "2026-10-23",
+  "scope": "Local Resources and docs/images PNG/JPG files only; no remote account lookup",
+  "initial_image_count": 24,
+  "final_existing_image_count": 23,
+  "images": [
+    {
+      "file": "Resources/Logo.png",
+      "exists_at_final_check": true,
+      "bytes": 410405,
+      "sha256": "c696e5f0561deebc94ca37bf7fc066331a72972a8af015cdae40ce0a486a389b",
+      "qr_payloads": [],
+      "qr_note": "No QR payload decoded; does not prove no QR is present",
+      "ocr_matching_lines": [],
+      "ocr_note": "Machine OCR for discovery only; not verified identity or current account state"
+    },
+    {
+      "file": "Resources/MenuIcon.png",
+      "exists_at_final_check": true,
+      "bytes": 365,
+      "sha256": "26c8f35a5d1f34871688dc09e46cc474254e968b1490bc9e4db116210766082f",
+      "qr_payloads": [],
+      "qr_note": "No QR payload decoded; does not prove no QR is present",
+      "ocr_matching_lines": [],
+      "ocr_note": "Machine OCR for discovery only; not verified identity or current account state"
+    },
+    {
+      "file": "Resources/MenuIcon@2x.png",
+      "exists_at_final_check": true,
+      "bytes": 681,
+      "sha256": "a76e6ee92aac09a6e4155cacc312a9c5473eb47af4a8c72549f2669250c45f27",
+      "qr_payloads": [],
+      "qr_note": "No QR payload decoded; does not prove no QR is present",
+      "ocr_matching_lines": [],
+      "ocr_note": "Machine OCR for discovery only; not verified identity or current account state"
+    },
+    {
+      "file": "Resources/Pushpin.png",
+      "exists_at_final_check": true,
+      "bytes": 73040,
+      "sha256": "3594bb0c89126dc005cd4c3be6be568f219c8d623d7981624660225c60f23804",
+      "qr_payloads": [],
+      "qr_note": "No QR payload decoded; does not prove no QR is present",
+      "ocr_matching_lines": [],
+      "ocr_note": "Machine OCR for discovery only; not verified identity or current account state"
+    },
+    {
+      "file": "docs/images/capture-annotations-en.jpg",
+      "exists_at_final_check": true,
+      "bytes": 662876,
+      "sha256": "6269d0ab90f77c08772f9a30bd0034bb8ed830c6dfb2c20dc80f0daf5970090c",
+      "qr_payloads": [],
+      "qr_note": "No QR payload decoded; does not prove no QR is present",
+      "ocr_matching_lines": [
+        "Pastory",
+        "Pastory",
+        "hil i'm cici"
+      ],
+      "ocr_note": "Machine OCR for discovery only; not verified identity or current account state"
+    },
+    {
+      "file": "docs/images/capture-annotations.jpg",
+      "exists_at_final_check": true,
+      "bytes": 655573,
+      "sha256": "7827ba6d8c26686e7664c96f58466c8955bcbc5ac3ed0f34bdf5c7ea7b50ff53",
+      "qr_payloads": [],
+      "qr_note": "No QR payload decoded; does not prove no QR is present",
+      "ocr_matching_lines": [
+        "Pastory",
+        "Pastory",
+        "hi,im cici",
+        "cici"
+      ],
+      "ocr_note": "Machine OCR for discovery only; not verified identity or current account state"
+    },
+    {
+      "file": "docs/images/card-actions-en.jpg",
+      "exists_at_final_check": true,
+      "bytes": 719521,
+      "sha256": "f7a4e9252b0f3f916b61358cd607d841ee2d11ef4d9b708e80fedccdb624905e",
+      "qr_payloads": [],
+      "qr_note": "No QR payload decoded; does not prove no QR is present",
+      "ocr_matching_lines": [
+        "Pastory",
+        "Pastory"
+      ],
+      "ocr_note": "Machine OCR for discovery only; not verified identity or current account state"
+    },
+    {
+      "file": "docs/images/card-actions.jpg",
+      "exists_at_final_check": true,
+      "bytes": 848695,
+      "sha256": "32e87e78d17ea17f5e50652eb839b283470f6ab02d11bd911db9e331da6cedfe",
+      "qr_payloads": [],
+      "qr_note": "No QR payload decoded; does not prove no QR is present",
+      "ocr_matching_lines": [
+        "Pastory",
+        "P Pastory",
+        "Pastory"
+      ],
+      "ocr_note": "Machine OCR for discovery only; not verified identity or current account state"
+    },
+    {
+      "file": "docs/images/clipboard-editing-en.jpg",
+      "exists_at_final_check": true,
+      "bytes": 864811,
+      "sha256": "12e8ba34fbd32a1b41d96306faaeeb67ae07393d2fafb393e442495442da068e",
+      "qr_payloads": [],
+      "qr_note": "No QR payload decoded; does not prove no QR is present",
+      "ocr_matching_lines": [
+        "Pastory"
+      ],
+      "ocr_note": "Machine OCR for discovery only; not verified identity or current account state"
+    },
+    {
+      "file": "docs/images/clipboard-editing.jpg",
+      "exists_at_final_check": true,
+      "bytes": 1013790,
+      "sha256": "55a9c0dded741f28c88fe93b415e669369fc7f2351899079a771b2e9cb4fcab4",
+      "qr_payloads": [],
+      "qr_note": "No QR payload decoded; does not prove no QR is present",
+      "ocr_matching_lines": [
+        "Pastory",
+        "P Pastory",
+        "Pastory"
+      ],
+      "ocr_note": "Machine OCR for discovery only; not verified identity or current account state"
+    },
+    {
+      "file": "docs/images/clipboard-history-en.jpg",
+      "exists_at_final_check": true,
+      "bytes": 1061146,
+      "sha256": "fe1ddee0073d7ec1af3ed46bd2b997ec4d8d106a142243b203ffe4ffa7b672da",
+      "qr_payloads": [],
+      "qr_note": "No QR payload decoded; does not prove no QR is present",
+      "ocr_matching_lines": [
+        "Pastory",
+        "Pastory",
+        "Pastory",
+        "P Pastory",
+        "P Pastory"
+      ],
+      "ocr_note": "Machine OCR for discovery only; not verified identity or current account state"
+    },
+    {
+      "file": "docs/images/clipboard-history.jpg",
+      "exists_at_final_check": true,
+      "bytes": 1019784,
+      "sha256": "b47fd15b0cd4d4ce6d0943dd169aa9d7a36d008eef8b94c7a7a7c53233ed3435",
+      "qr_payloads": [],
+      "qr_note": "No QR payload decoded; does not prove no QR is present",
+      "ocr_matching_lines": [
+        "Pastory",
+        "Pastory",
+        "P Pastory",
+        "P Pastory",
+        "P Pastory",
+        "P Pastory"
+      ],
+      "ocr_note": "Machine OCR for discovery only; not verified identity or current account state"
+    },
+    {
+      "file": "docs/images/clipboard-settings-en.jpg",
+      "exists_at_final_check": true,
+      "bytes": 1108758,
+      "sha256": "ecb473258f8ff3031fba4c625473b7a6bd80062194c840b4ecb6136c56b16845",
+      "qr_payloads": [],
+      "qr_note": "No QR payload decoded; does not prove no QR is present",
+      "ocr_matching_lines": [
+        "Pastory",
+        "Pastory"
+      ],
+      "ocr_note": "Machine OCR for discovery only; not verified identity or current account state"
+    },
+    {
+      "file": "docs/images/clipboard-settings.jpg",
+      "exists_at_final_check": true,
+      "bytes": 1137806,
+      "sha256": "4bee051ee22663818039c8e1fb33ce44a94090f6a0444af5193d800fe4f4eaee",
+      "qr_payloads": [],
+      "qr_note": "No QR payload decoded; does not prove no QR is present",
+      "ocr_matching_lines": [
+        "Pastory",
+        "Pastory"
+      ],
+      "ocr_note": "Machine OCR for discovery only; not verified identity or current account state"
+    },
+    {
+      "file": "docs/images/clipboard-title-en.jpg",
+      "exists_at_final_check": true,
+      "bytes": 850147,
+      "sha256": "efc4ea8768df7512dbc81082c8ff71c8d2c4cf3b3841dbc077d18f47e878f2ed",
+      "qr_payloads": [],
+      "qr_note": "No QR payload decoded; does not prove no QR is present",
+      "ocr_matching_lines": [
+        "Pastory"
+      ],
+      "ocr_note": "Machine OCR for discovery only; not verified identity or current account state"
+    },
+    {
+      "file": "docs/images/clipboard-title.jpg",
+      "exists_at_final_check": true,
+      "bytes": 914669,
+      "sha256": "b14ec21774df5c5fdc3980868c750d7d8529fc615c5d0967317ab13d5b6244c3",
+      "qr_payloads": [],
+      "qr_note": "No QR payload decoded; does not prove no QR is present",
+      "ocr_matching_lines": [
+        "Pastory"
+      ],
+      "ocr_note": "Machine OCR for discovery only; not verified identity or current account state"
+    },
+    {
+      "file": "docs/images/hero-en.png",
+      "exists_at_final_check": true,
+      "bytes": 1047380,
+      "sha256": "f14f0e12bea323207a157833aebb053e175e77a55d745da434d0917b3211fe8f",
+      "qr_payloads": [],
+      "qr_note": "No QR payload decoded; does not prove no QR is present",
+      "ocr_matching_lines": [
+        "Pastory",
+        "Pastory",
+        "Pastory",
+        "P Pastory",
+        "P Pastory"
+      ],
+      "ocr_note": "Machine OCR for discovery only; not verified identity or current account state"
+    },
+    {
+      "file": "docs/images/hero-zh.png",
+      "exists_at_final_check": true,
+      "bytes": 1107103,
+      "sha256": "295871390d9c82b5688754bc37c31986e607c04c970b72d11b0e4c21ff8d9941",
+      "qr_payloads": [],
+      "qr_note": "No QR payload decoded; does not prove no QR is present",
+      "ocr_matching_lines": [
+        "Pastory",
+        "Pastory",
+        "P Pastory",
+        "Pastory",
+        "Pastory",
+        "Pastory"
+      ],
+      "ocr_note": "Machine OCR for discovery only; not verified identity or current account state"
+    },
+    {
+      "file": "docs/images/menubar-zh.png",
+      "exists_at_final_check": true,
+      "bytes": 11538,
+      "sha256": "76c7ff6d6aeccfaecbf54bf594019f2b3696c29fed56d09a27293fabf985b6e8",
+      "qr_payloads": [],
+      "qr_note": "No QR payload decoded; does not prove no QR is present",
+      "ocr_matching_lines": [],
+      "ocr_note": "Machine OCR for discovery only; not verified identity or current account state"
+    },
+    {
+      "file": "docs/images/recording-formats-en.jpg",
+      "exists_at_final_check": true,
+      "bytes": 818609,
+      "sha256": "cea61b40ca56bc5213efc51c25752d911be5a212801a589684a16c99b89d1f72",
+      "qr_payloads": [],
+      "qr_note": "No QR payload decoded; does not prove no QR is present",
+      "ocr_matching_lines": [
+        "Pastory",
+        "Cici su♥",
+        "@nothingbutcici"
+      ],
+      "ocr_note": "Machine OCR for discovery only; not verified identity or current account state"
+    },
+    {
+      "file": "docs/images/recording-formats.jpg",
+      "exists_at_final_check": true,
+      "bytes": 847117,
+      "sha256": "d3aedce2d8f59ed3c01f2de4147d424090737d98ef4171103d87e7c653dc5c78",
+      "qr_payloads": [],
+      "qr_note": "No QR payload decoded; does not prove no QR is present",
+      "ocr_matching_lines": [
+        "Pastory",
+        "cicisu♥",
+        "@nothingbutcici",
+        "cici su ♥ @nothingbutcici •Sep 9",
+        "自我介绍下，我是cici"
+      ],
+      "ocr_note": "Machine OCR for discovery only; not verified identity or current account state"
+    },
+    {
+      "file": "docs/images/text-recognition-en.jpg",
+      "exists_at_final_check": true,
+      "bytes": 922349,
+      "sha256": "51eb1ce2139a89cb13c8a66a97ebf5bffd15c799cd2df4894d1ea79267a3894a",
+      "qr_payloads": [],
+      "qr_note": "No QR payload decoded; does not prove no QR is present",
+      "ocr_matching_lines": [
+        "Pastory",
+        "Pastory"
+      ],
+      "ocr_note": "Machine OCR for discovery only; not verified identity or current account state"
+    },
+    {
+      "file": "docs/images/text-recognition.jpg",
+      "exists_at_final_check": true,
+      "bytes": 887844,
+      "sha256": "8cfe48c1c71a85b5e85d710055d527c827dbcd52b39a677926011fa88a1d3245",
+      "qr_payloads": [],
+      "qr_note": "No QR payload decoded; does not prove no QR is present",
+      "ocr_matching_lines": [
+        "Pastory",
+        "Pastory"
+      ],
+      "ocr_note": "Machine OCR for discovery only; not verified identity or current account state"
+    },
+    {
+      "file": "docs/images/wechat-group.png",
+      "exists_at_final_check": false,
+      "note": "Present during initial inspection and OCR; absent at final verification. This audit did not delete or restore it.",
+      "qr_payloads": [
+        "https://weixin.qq.com/g/AQYAADgI7pExVNNm56VHu05YswhyafUWo2lYMGMTdn2cFzTy6lAGOy-ilAjs6Kha"
+      ],
+      "qr_note": "decoded offline; destination not opened",
+      "ocr_matching_lines": [
+        "群聊：Pastory 小小群"
+      ],
+      "ocr_note": "Machine OCR for discovery only; not verified identity or current account state"
+    }
+  ]
+}

@@ -1,0 +1,394 @@
+﻿分类,文件,行号,原文
+品牌与应用身份,.swiftpm/xcode/xcuserdata/evinci.xcuserdatad/xcschemes/xcschememanagement.plist,7,		<key>Pastory.xcscheme_^#shared#^_</key>
+作者与命名空间；第三方与许可,LICENSE,3,Copyright (c) 2026 nothingbutcici
+第三方与许可,LICENSE,12,The above copyright notice and this permission notice shall be included in all
+第三方与许可,LICENSE,18,"AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER"
+品牌与应用身份,Package.swift,5,"    name: ""Pastory"","
+品牌与应用身份,Package.swift,9,"            name: ""Pastory"","
+品牌与应用身份,Package.swift,10,"            path: ""Sources/Pastory"","
+品牌与应用身份,README.en.md,2,"  <img src=""Resources/Logo.png"" width=""104"" alt=""Pastory"">"
+品牌与应用身份,README.en.md,5,"<h1 align=""center"">Pastory</h1>"
+品牌与应用身份,README.en.md,7,"<p align=""center"">Pastory = Paste + History</p>"
+品牌与应用身份,README.en.md,18,"  <img src=""docs/images/hero-en.png"" alt=""The Pastory clipboard"" width=""920"">"
+品牌与应用身份,README.en.md,29,"<p align=""center"">Pastory gives the clipboard a long-term memory:<br>text, links, images, screenshots, and recordings you copy all live in one panel where you can manage and reuse them.</p>"
+自动更新与发布；品牌与应用身份,README.en.md,45,"1. Download the [latest release](../../releases/latest), unzip it, and drag `Pastory.app` into Applications."
+签名与公证,README.en.md,46,"2. Open it. A handwritten **P** appears in the menu bar, and the clipboard panel opens once on first launch. (Notarized by Apple.)"
+品牌与应用身份,README.en.md,50,"3. The first time you take a screenshot, allow **Screen Recording** when prompted, then reopen Pastory."
+品牌与应用身份,README.en.md,68,"**Power move:** if the things you copy are information-dense, have an agent read your Pastory database periodically and turn it into a reviewable Markdown knowledge base."
+品牌与应用身份,README.en.md,84,So Pastory brings all of that together.
+品牌与应用身份,README.en.md,142,"With Pastory: copy it once and give it a title such as ""Client A address"" or ""Company invoice details"". Pin it. Next time, double-click and it's pasted."
+品牌与应用身份,README.en.md,148,With Pastory: search a keyword and it's there whenever you need it.
+品牌与应用身份,README.en.md,154,"With Pastory: take a screenshot, and the images line up in the clipboard so you can compare them and pick the final one. Pin the ones you like, open them to annotate when needed, and save to your desktop when you want — always as a full-resolution PNG."
+品牌与应用身份,README.en.md,160,"- All data lives in `~/Library/Application Support/Pastory/`: plain files plus one SQLite index. You can browse it, back it up, or copy it to another Mac and import it."
+作者与命名空间；品牌与应用身份,README.en.md,169,git clone https://github.com/nothingbutcici/pastory.git
+品牌与应用身份,README.en.md,170,cd pastory
+品牌与应用身份,README.en.md,171,./build.sh          # → build/Pastory.app
+第三方与许可,README.en.md,182,"Thanks to [@behindthebeat](https://github.com/behindthebeat) for making search fast with large histories, and for resizable, wrapping text annotations."
+作者与命名空间,README.en.md,184,[MIT License](LICENSE) · © 2026 nothingbutcici
+品牌与应用身份,README.md,2,"  <img src=""Resources/Logo.png"" width=""104"" alt=""Pastory"">"
+品牌与应用身份,README.md,5,"<h1 align=""center"">Pastory</h1>"
+品牌与应用身份,README.md,7,"<p align=""center"">Pastory = Paste + History</p>"
+品牌与应用身份,README.md,18,"  <img src=""docs/images/hero-zh.png"" alt=""Pastory 剪贴板"" width=""920"">"
+品牌与应用身份,README.md,29,"<p align=""center"">Pastory 给剪贴板开了个长期记忆的外挂：<br>复制过的文字、链接、图片、截图、录屏，都在一个面板里集中管理和调用。</p>"
+联系与赞助；品牌与应用身份,README.md,40,"  <img src=""docs/images/wechat-group.png"" alt=""微信群：Pastory 小小群"" width=""160""><br>"
+自动更新与发布；品牌与应用身份,README.md,50,1. 下载 [最新版 zip](../../releases/latest)，解压，把 `Pastory.app` 拖进「应用程序」。
+签名与公证,README.md,51,2. 打开它。菜单栏右上角出现手写的 **P**，第一次会自动弹出剪贴板面板。（已过 Apple 公证，请放心“食用”）
+品牌与应用身份,README.md,55,3. 第一次截图时，按提示打开「屏幕录制」权限，然后重新打开 Pastory。
+品牌与应用身份,README.md,73,**高阶用法**：如果你来回复制的内容信息密度很高，甚至可以让 Agent 定期读你的 Pastory 数据库，帮你整理成可以 review 的 md 知识库！
+品牌与应用身份,README.md,89,所以 Pastory 把这些能力都合在一起了！
+品牌与应用身份,README.md,147,使用 Pastory：文本复制一次，加个标题如「客户 A 地址」「公司开票信息」。Pin 起来，下次使用，双击就能贴过去。
+品牌与应用身份,README.md,153,使用 Pastory：搜索关键词，想用随时都能找得到。
+品牌与应用身份,README.md,159,使用 Pastory：简单截图，剪贴板排成一排，方便你比较、再确定最终选中方案。喜欢的 Pin 住，要标注的时候再点开编辑。喜欢就下载保存到桌面，导出的永远是全分辨率 PNG。
+品牌与应用身份,README.md,165,- 所有数据都在 `~/Library/Application Support/Pastory/`：普通文件加一个 SQLite 索引，随时能看、能备份、能拷到另一台 Mac 导入。
+作者与命名空间；品牌与应用身份,README.md,174,git clone https://github.com/nothingbutcici/pastory.git
+品牌与应用身份,README.md,175,cd pastory
+品牌与应用身份,README.md,176,./build.sh          # → build/Pastory.app
+第三方与许可,README.md,187,感谢 [@behindthebeat](https://github.com/behindthebeat) 贡献了大历史下的搜索性能优化，以及可调整大小、自动换行的文字标注。
+作者与命名空间,README.md,189,[MIT License](LICENSE) · © 2026 nothingbutcici
+第三方与许可,Resources/Fonts/OFL-Caveat.txt,1,Copyright 2014 The Caveat Project Authors (https://github.com/googlefonts/caveat)
+第三方与许可,Resources/Fonts/OFL-Caveat.txt,5,http://scripts.sil.org/OFL
+第三方与许可,Resources/Fonts/OFL-Caveat.txt,13,The goals of the Open Font License (OFL) are to stimulate worldwide
+第三方与许可,Resources/Fonts/OFL-Caveat.txt,19,"The OFL allows the licensed fonts to be used, studied, modified and"
+第三方与许可,Resources/Fonts/OFL-Caveat.txt,29,"""Font Software"" refers to the set of files released by the Copyright"
+第三方与许可,Resources/Fonts/OFL-Caveat.txt,34,copyright statement(s).
+第三方与许可,Resources/Fonts/OFL-Caveat.txt,37,distributed by the Copyright Holder(s).
+第三方与许可,Resources/Fonts/OFL-Caveat.txt,58,contains the above copyright notice and this license. These can be
+第三方与许可,Resources/Fonts/OFL-Caveat.txt,65,Copyright Holder. This restriction only applies to the primary font name as
+第三方与许可,Resources/Fonts/OFL-Caveat.txt,68,4) The name(s) of the Copyright Holder(s) or the Author(s) of the Font
+第三方与许可,Resources/Fonts/OFL-Caveat.txt,71,Copyright Holder(s) and the Author(s) or with their explicit written
+第三方与许可,Resources/Fonts/OFL-Caveat.txt,88,"OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE"
+第三方与许可,Resources/Fonts/OFL-Caveat.txt,89,"COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,"
+第三方与许可,Resources/Fonts/OFL.txt,1,Copyright 2023 The Ysabeau Project Authors (https://github.com/CatharsisFonts/Ysabeau)
+第三方与许可,Resources/Fonts/OFL.txt,5,https://scripts.sil.org/OFL
+第三方与许可,Resources/Fonts/OFL.txt,13,The goals of the Open Font License (OFL) are to stimulate worldwide
+第三方与许可,Resources/Fonts/OFL.txt,19,"The OFL allows the licensed fonts to be used, studied, modified and"
+第三方与许可,Resources/Fonts/OFL.txt,29,"""Font Software"" refers to the set of files released by the Copyright"
+第三方与许可,Resources/Fonts/OFL.txt,34,copyright statement(s).
+第三方与许可,Resources/Fonts/OFL.txt,37,distributed by the Copyright Holder(s).
+第三方与许可,Resources/Fonts/OFL.txt,58,contains the above copyright notice and this license. These can be
+第三方与许可,Resources/Fonts/OFL.txt,65,Copyright Holder. This restriction only applies to the primary font name as
+第三方与许可,Resources/Fonts/OFL.txt,68,4) The name(s) of the Copyright Holder(s) or the Author(s) of the Font
+第三方与许可,Resources/Fonts/OFL.txt,71,Copyright Holder(s) and the Author(s) or with their explicit written
+第三方与许可,Resources/Fonts/OFL.txt,88,"OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE"
+第三方与许可,Resources/Fonts/OFL.txt,89,"COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,"
+品牌与应用身份,Resources/Info.plist,5,	<key>CFBundleDisplayName</key>
+品牌与应用身份,Resources/Info.plist,6,	<string>Pastory</string>
+品牌与应用身份,Resources/Info.plist,7,	<key>CFBundleExecutable</key>
+品牌与应用身份,Resources/Info.plist,8,	<string>Pastory</string>
+品牌与应用身份,Resources/Info.plist,10,	<string>AppIcon</string>
+品牌与应用身份,Resources/Info.plist,11,	<key>CFBundleIdentifier</key>
+作者与命名空间；品牌与应用身份,Resources/Info.plist,12,	<string>com.cici.snipclip</string>
+品牌与应用身份,Resources/Info.plist,16,	<string>Pastory</string>
+自动更新与发布,Resources/Info.plist,19,	<key>CFBundleShortVersionString</key>
+自动更新与发布,Resources/Info.plist,21,	<key>CFBundleVersion</key>
+品牌与应用身份,Resources/Info.plist,25,	<key>LSUIElement</key>
+品牌与应用身份,Sources/Pastory/Annotate/TopBar.swift,3,/// Brand bar above everything while capturing:  [logo] Pastory   [ 截屏 | 录屏 ]  │  ✕
+品牌与应用身份,Sources/Pastory/Annotate/TopBar.swift,33,"        let name = NSTextField(labelWithString: ""Pastory"")"
+品牌与应用身份,Sources/Pastory/App/AppDelegate.swift,19,"        statusItem.button?.image = Theme.menuIcon ?? NSImage(systemSymbolName: ""scissors"", accessibilityDescription: ""Pastory"")"
+自动更新与发布,Sources/Pastory/App/AppDelegate.swift,36,        Updater.shared.schedule()
+品牌与应用身份,Sources/Pastory/App/AppDelegate.swift,98,"        add(menu, ""退出 Pastory"".l, #selector(menuQuit), keyEquivalent: ""q"")"
+品牌与应用身份,Sources/Pastory/App/AppDelegate.swift,106,"        let quitItem = NSMenuItem(title: ""退出 Pastory"".l, action: #selector(menuQuit), keyEquivalent: ""q"")"
+自动更新与发布,Sources/Pastory/App/AppDelegate.swift,149,    @objc private func menuCheckUpdates() { Task { @MainActor in await Updater.shared.check(interactive: true) } }
+品牌与应用身份,Sources/Pastory/App/Localization.swift,6,"    /// Resolved from Preferences (""system"" / ""zh"" / ""en""); PASTORY_LANG overrides for offscreen renders."
+品牌与应用身份,Sources/Pastory/App/Localization.swift,36,"        (""正在下载 Pastory %@…"", ""Downloading Pastory %@…""), (""正在连接 GitHub…"", ""Connecting to GitHub…""), (""正在校验并安装…"", ""Verifying and installing…""),"
+签名与公证,Sources/Pastory/App/Localization.swift,37,"        (""重试"", ""Retry""), (""下载的更新包没有通过签名校验，已放弃安装。"", ""The downloaded update failed signature verification and was not installed.""),"
+品牌与应用身份,Sources/Pastory/App/Localization.swift,40,"        (""欢迎使用 Pastory"", ""Welcome to Pastory""), (""设置常用快捷键"", ""Set your two shortcuts""), (""开始使用"", ""Get Started""),"
+品牌与应用身份,Sources/Pastory/App/Localization.swift,61,"        (""退出 Pastory"", ""Quit Pastory""), (""编辑"", ""Edit""), (""撤销"", ""Undo""), (""重做"", ""Redo""), (""剪切"", ""Cut""), (""拷贝"", ""Copy""),"
+品牌与应用身份,Sources/Pastory/App/Localization.swift,64,"        (""Pastory 还没有屏幕录制权限"", ""Pastory has no Screen Recording permission yet""),"
+品牌与应用身份,Sources/Pastory/App/Localization.swift,65,"        (""在「系统设置 › 隐私与安全性 › 屏幕录制」里打开 Pastory。已经打开了的话，权限要重新启动后才生效。"", ""Turn Pastory on in System Settings › Privacy & Security › Screen Recording. If it is already on, the permission only takes effect after a relaunch.""),"
+品牌与应用身份,Sources/Pastory/App/Localization.swift,66,"        (""我已打开，重新启动 Pastory"", ""It's on — relaunch Pastory""), (""打开系统设置"", ""Open System Settings""), (""未设置"", ""Not set""),"
+品牌与应用身份,Sources/Pastory/App/Localization.swift,72,"        (""已被 Pastory 的「%@」占用，换一个"", ""Already used by Pastory's “%@”, pick another""),"
+品牌与应用身份,Sources/Pastory/App/Localization.swift,81,"        (""Pastory 读写不了存储目录"", ""Pastory cannot read or write its storage folder""),"
+品牌与应用身份,Sources/Pastory/App/Localization.swift,82,"        (""在修好之前不会写入任何改动，也不会清理。检查磁盘空间后重新打开 Pastory。"", ""Nothing will be written or cleaned up until this is fixed. Check disk space and reopen Pastory.""),"
+品牌与应用身份,Sources/Pastory/App/Localization.swift,107,"        (""已经是最新版本"", ""You're up to date""), (""Pastory %@"", ""Pastory %@""), (""检查更新失败"", ""Update check failed""), (""暂无发布版本"", ""No release published yet""),"
+品牌与应用身份,Sources/Pastory/App/Localization.swift,108,"        (""Pastory %@ 可以更新了（当前 %@）"", ""Pastory %@ is available (you have %@)""), (""下载并安装"", ""Download and Install""), (""打开下载页"", ""Open Download Page""),"
+品牌与应用身份,Sources/Pastory/App/Localization.swift,123,"        (""选另一个剪贴板工具的数据库文件或它的数据文件夹，或另一台机器的 Pastory 文件夹"", ""Choose another clipboard app's database file or data folder, or a Pastory folder from another Mac""),"
+品牌与应用身份,Sources/Pastory/App/Localization.swift,125,"        (""来自 %@。已经在 Pastory 里的内容会自动跳过，Pin 会保留；导入的内容排在 Pastory 自己记录的后面。"", ""From %@. Items already in Pastory are skipped, pins are kept; imported history sorts after Pastory's own items.""),"
+品牌与应用身份,Sources/Pastory/App/Localization.swift,140,"extension Notification.Name { static let languageChanged = Notification.Name(""pastory.languageChanged"") }"
+品牌与应用身份,Sources/Pastory/App/Permissions.swift,70,"        alert.messageText = ""Pastory 还没有屏幕录制权限"".l"
+品牌与应用身份,Sources/Pastory/App/Permissions.swift,71,"        alert.informativeText = ""在「系统设置 › 隐私与安全性 › 屏幕录制」里打开 Pastory。已经打开了的话，权限要重新启动后才生效。"".l"
+品牌与应用身份,Sources/Pastory/App/Permissions.swift,72,"        alert.addButton(withTitle: ""我已打开，重新启动 Pastory"".l)"
+品牌与应用身份,Sources/Pastory/App/Preferences.swift,78,    /// Self-tests (PASTORY_STORE set) get a throwaway suite so they never touch the user's real preferences.
+作者与命名空间；品牌与应用身份,Sources/Pastory/App/Preferences.swift,80,"        if Sandbox.store != nil, let suite = UserDefaults(suiteName: ""com.cici.snipclip.selftest"") {"
+作者与命名空间；品牌与应用身份,Sources/Pastory/App/Preferences.swift,81,"            suite.removePersistentDomain(forName: ""com.cici.snipclip.selftest"")"
+品牌与应用身份,Sources/Pastory/App/Preferences.swift,114,    /// The 「Pastory 怎么用」 card has been seeded into the store once.
+自动更新与发布,Sources/Pastory/App/Preferences.swift,160,"    var checkForUpdates: Bool { get { d.object(forKey: ""checkForUpdates"") as? Bool ?? true } set { d.set(newValue, forKey: ""checkForUpdates"") } }"
+自动更新与发布,Sources/Pastory/App/Preferences.swift,161,"    var lastUpdateCheck: Date? { get { d.object(forKey: ""lastUpdateCheck"") as? Date } set { d.set(newValue, forKey: ""lastUpdateCheck"") } }"
+自动更新与发布,Sources/Pastory/App/Preferences.swift,162,"    var skippedVersion: String? { get { d.string(forKey: ""skippedVersion"") } set { d.set(newValue, forKey: ""skippedVersion"") } }"
+品牌与应用身份,Sources/Pastory/App/Preferences.swift,189,"    static let shortcutsChanged = Notification.Name(""pastory.shortcutsChanged"")"
+品牌与应用身份,Sources/Pastory/App/Preferences.swift,191,"    static let shortcutBindingChanged = Notification.Name(""pastory.shortcutBindingChanged"")"
+品牌与应用身份,Sources/Pastory/App/Sandbox.swift,4,"/// entirely, so a stray PASTORY_STORE / PASTORY_LANG in the launching shell can never redirect the app"
+品牌与应用身份,Sources/Pastory/App/Sandbox.swift,13,"        guard isSelfTest, let v = ProcessInfo.processInfo.environment[""PASTORY_STORE""], !v.isEmpty else { return nil }"
+品牌与应用身份,Sources/Pastory/App/Sandbox.swift,16,"    static let language: String? = isSelfTest ? ProcessInfo.processInfo.environment[""PASTORY_LANG""] : nil"
+品牌与应用身份,Sources/Pastory/App/SearchSelfTest.swift,11,"        let root = FileManager.default.temporaryDirectory.appendingPathComponent(""pastory-search-\(UUID().uuidString)"")"
+品牌与应用身份,Sources/Pastory/App/SelfTest.swift,6,/// Set PASTORY_STORE=<dir> to keep test items out of the real store.
+品牌与应用身份,Sources/Pastory/App/SelfTest.swift,17,        // Anything that writes to a store must run inside PASTORY_STORE. Never against the user's data.
+联系与赞助,Sources/Pastory/App/SelfTest.swift,18,"        let mutating: Set<String> = [""clipboard"", ""retention"", ""shelf"", ""shelfsearch"", ""search"", ""settings"", ""editors"", ""import"", ""ingest"", ""tombstone"", ""heic"", ""pbfiles"", ""welcome"", ""note"", ""contact""]"
+品牌与应用身份,Sources/Pastory/App/SelfTest.swift,25,"                print(""refusing: --selftest \(cmd) needs PASTORY_STORE pointing at a scratch folder (never the real store)"")"
+品牌与应用身份,Sources/Pastory/App/SelfTest.swift,32,"            case ""capture"": ok = await capture(out: rest.first ?? ""pastory-capture.png"")"
+品牌与应用身份,Sources/Pastory/App/SelfTest.swift,35,"            case ""shelf"": ok = await renderShelf(out: rest.first ?? ""pastory-shelf.png"")"
+品牌与应用身份,Sources/Pastory/App/SelfTest.swift,36,"            case ""shelfsearch"": ok = await renderShelf(out: rest.first ?? ""/tmp/pastory-search.png"", searching: true)"
+品牌与应用身份,Sources/Pastory/App/SelfTest.swift,44,"                host.frame = CGRect(x: 0, y: 0, width: CGFloat(Double(ProcessInfo.processInfo.environment[""PASTORY_WIDTH""] ?? """") ?? 1600), height: CGFloat(Double(ProcessInfo.processInfo.environment[""PASTORY_HEIGHT""] ?? """") ?? 450))      // taller = see the lower sections"
+品牌与应用身份,Sources/Pastory/App/SelfTest.swift,48,"                ok = snapshot(host, to: rest.first ?? ""pastory-settings.png"")"
+品牌与应用身份,Sources/Pastory/App/SelfTest.swift,50,"                let mov = FileManager.default.temporaryDirectory.appendingPathComponent(""pastory-preview.mp4"")"
+品牌与应用身份,Sources/Pastory/App/SelfTest.swift,55,"                ok = w.debugContentView.map { snapshot($0, to: rest.first ?? ""pastory-preview.png"") } ?? false"
+品牌与应用身份,Sources/Pastory/App/SelfTest.swift,58,"                let out = rest.first ?? ""pastory-editor.png"""
+自动更新与发布,Sources/Pastory/App/SelfTest.swift,71,"                // Exercise the updater's downloader for real: progress callbacks, completion, and the error wording."
+品牌与应用身份,Sources/Pastory/App/SelfTest.swift,72,"                let dest = URL(fileURLWithPath: rest.count > 1 ? rest[1] : NSTemporaryDirectory() + ""pastory-dl-test"")"
+自动更新与发布,Sources/Pastory/App/SelfTest.swift,76,"                    try await UpdateDownload().fetch(URL(string: rest.first ?? """")!, to: dest) { _, _ in ticks += 1 }"
+自动更新与发布,Sources/Pastory/App/SelfTest.swift,79,"                } catch { print(""failed: \(Updater.describe(error)) [\((error as NSError).domain) \((error as NSError).code)]""); ok = false }"
+品牌与应用身份,Sources/Pastory/App/SelfTest.swift,98,"                ok = snapshot(host, to: rest.first ?? ""pastory-note.png"")"
+品牌与应用身份,Sources/Pastory/App/SelfTest.swift,106,"                host.frame = CGRect(x: 0, y: 0, width: 1600, height: CGFloat(Double(ProcessInfo.processInfo.environment[""PASTORY_HEIGHT""] ?? """") ?? 450))"
+品牌与应用身份,Sources/Pastory/App/SelfTest.swift,110,"                ok = snapshot(host, to: rest.first ?? ""pastory-welcome.png"")"
+自动更新与发布,Sources/Pastory/App/SelfTest.swift,112,"                let w = UpdateProgressWindow(version: ""1.0.3"")"
+品牌与应用身份,Sources/Pastory/App/SelfTest.swift,114,"                ok = w.debugContentView.map { $0.frame = CGRect(x: 0, y: 0, width: 380, height: 150); $0.layoutSubtreeIfNeeded(); return snapshot($0, to: rest.first ?? ""pastory-updatewin.png"") } ?? false"
+品牌与应用身份,Sources/Pastory/App/SelfTest.swift,116,"                ok = OCRPanelController.shared.debugView(sample: ""Pastory 是一个截图工具\n所有复制过的内容都留在剪贴板里\nMade in 2026 · 中英混排 OK"").map { snapshot($0, to: rest.first ?? ""pastory-ocrpanel.png"") } ?? false"
+品牌与应用身份,Sources/Pastory/App/SelfTest.swift,150,"                    let url = FileManager.default.temporaryDirectory.appendingPathComponent(""pastory-writer-\(hevc ? ""hevc"" : ""h264"")-\(cq ? ""cq"" : ""abr"").mp4"")"
+自动更新与发布,Sources/Pastory/App/SelfTest.swift,199,"            case ""updater"":"
+作者与命名空间；品牌与应用身份,Sources/Pastory/App/SelfTest.swift,201,"                {""tag_name"":""v1.2"",""html_url"":""https://github.com/nothingbutcici/pastory/releases/tag/v1.2"",""body"":""- faster shelf\\n- HEIC option"","
+作者与命名空间；品牌与应用身份,Sources/Pastory/App/SelfTest.swift,202,"                 ""assets"":[{""name"":""Pastory-1.2.zip"",""browser_download_url"":""https://github.com/nothingbutcici/pastory/releases/download/v1.2/Pastory-1.2.zip""}]}"
+自动更新与发布,Sources/Pastory/App/SelfTest.swift,204,                let r: Updater.Release?
+自动更新与发布,Sources/Pastory/App/SelfTest.swift,205,"                do { r = try Updater.parse(Data(fixture.utf8)) } catch { print(""parse error: \(error)""); r = nil }"
+品牌与应用身份,Sources/Pastory/App/SelfTest.swift,208,"                    (""parses tag/notes/asset"", r?.version == ""1.2"" && r?.zipURL?.lastPathComponent == ""Pastory-1.2.zip"" && r?.notes.contains(""HEIC"") == true),"
+自动更新与发布,Sources/Pastory/App/SelfTest.swift,209,"                    (""1.2 > 1.0"", Updater.isNewer(""1.2"", than: ""1.0"")),"
+自动更新与发布,Sources/Pastory/App/SelfTest.swift,210,"                    (""1.0.1 > 1.0"", Updater.isNewer(""1.0.1"", than: ""1.0"")),"
+自动更新与发布,Sources/Pastory/App/SelfTest.swift,211,"                    (""1.0 !> 1.0"", !Updater.isNewer(""1.0"", than: ""1.0"")),"
+自动更新与发布,Sources/Pastory/App/SelfTest.swift,212,"                    (""1.10 > 1.9"", Updater.isNewer(""1.10"", than: ""1.9"")),"
+自动更新与发布；品牌与应用身份,Sources/Pastory/App/SelfTest.swift,213,"                    (""notes: zh half, no markdown"", { let t = Updater.notesForDisplay(""Pastory 1.2\n\n**新功能**\n- 一\n- 二\n\n---\n\nPastory 1.2\n\n**New**\n- one"", version: ""1.2"", english: false)"
+自动更新与发布,Sources/Pastory/App/SelfTest.swift,215,"                    (""notes: en half"", Updater.notesForDisplay(""中文\n---\n**New**\n- one"", version: ""1.2"", english: true) == ""New\n•  one""),"
+自动更新与发布,Sources/Pastory/App/SelfTest.swift,216,"                    (""notes: no divider keeps all"", Updater.notesForDisplay(""- a\n- b"", version: ""1.2"", english: true) == ""•  a\n•  b""),"
+签名与公证；自动更新与发布,Sources/Pastory/App/SelfTest.swift,217,"                    (""ad-hoc build must not self-install"", Updater.teamIdentifier(of: Bundle.main.bundleURL) == nil ? !Updater.canSelfInstall : true),"
+品牌与应用身份,Sources/Pastory/App/SelfTest.swift,237,"            case ""annotate"": ok = renderAnnotate(out: rest.first ?? ""pastory-annotate.png"")"
+品牌与应用身份,Sources/Pastory/App/SelfTest.swift,238,"            case ""annotationtext"": ok = AnnotationTextSelfTest.run(out: rest.first ?? ""/tmp/pastory-annotationtext.png"", snapshot: snapshot)"
+品牌与应用身份,Sources/Pastory/App/SelfTest.swift,263,"            let ref = url.deletingLastPathComponent().appendingPathComponent(""pastory-ref.png"")"
+品牌与应用身份,Sources/Pastory/App/SelfTest.swift,316,"            expect = [""Pastory"", ""截图工具"", ""2026""]"
+品牌与应用身份,Sources/Pastory/App/SelfTest.swift,338,"        let lines = [""Pastory 是一个截图工具"", ""所有复制过的内容都留在剪贴板里"", ""Made in 2026 · 中英混排 OK""]"
+品牌与应用身份,Sources/Pastory/App/SelfTest.swift,431,"        let mov = dir.appendingPathComponent(""pastory-selftest.mp4"")"
+品牌与应用身份,Sources/Pastory/App/SelfTest.swift,432,"        let gifURL = dir.appendingPathComponent(""pastory-selftest.gif"")"
+品牌与应用身份,Sources/Pastory/App/SelfTest.swift,457,"        precondition(Sandbox.store != nil, ""seedStore() outside PASTORY_STORE: refusing to touch the real store"")"
+品牌与应用身份,Sources/Pastory/App/SelfTest.swift,460,"        let mov = FileManager.default.temporaryDirectory.appendingPathComponent(""pastory-seed.mp4"")"
+作者与命名空间；品牌与应用身份,Sources/Pastory/App/SelfTest.swift,468,"        store.insertText(""https://github.com/nothingbutcici/pastory"", rtf: nil, source: src)"
+品牌与应用身份,Sources/Pastory/App/SelfTest.swift,470,"            store.insertImage(png: png, source: CaptureCoordinator.source, ocrText: ""Pastory 是一个截图工具"")"
+品牌与应用身份,Sources/Pastory/App/SelfTest.swift,477,"        if ProcessInfo.processInfo.environment[""PASTORY_HOWTO""] != nil { HowToCard.seedIfNeeded() }      // newest → first card"
+品牌与应用身份,Sources/Pastory/App/SelfTest.swift,497,"        if searching { model.showWelcome = false; model.query = ""Pastory"" }"
+品牌与应用身份,Sources/Pastory/App/SelfTest.swift,505,"        if let n = ProcessInfo.processInfo.environment[""PASTORY_SELECT""].flatMap({ Int($0) }) { for _ in 0..<n { ShelfPanelController.shared.model.move(1) } }   // render with the highlight moved"
+品牌与应用身份,Sources/Pastory/App/SelfTest.swift,551,"            Annotation(tool: .text, color: ink, size: .s, points: [CGPoint(x: 300, y: 32)], text: ""Hello Pastory""),"
+品牌与应用身份,Sources/Pastory/App/SelfTest.swift,592,"        let tmp = FileManager.default.temporaryDirectory.appendingPathComponent(""pastory-ingest-\(UUID().uuidString).png"")"
+品牌与应用身份,Sources/Pastory/App/SelfTest.swift,598,"            let pb = NSPasteboard(name: NSPasteboard.Name(""pastory.selftest.\(UUID().uuidString)""))"
+品牌与应用身份,Sources/Pastory/App/SelfTest.swift,638,"        let copy = FileManager.default.temporaryDirectory.appendingPathComponent(""pastory-copy-\(UUID().uuidString)"", isDirectory: true)"
+自动更新与发布,Sources/Pastory/App/SettingsWindow.swift,28,    var checkForUpdates: Bool { get { access(keyPath: \.checkForUpdates); return Preferences.shared.checkForUpdates } set { withMutation(keyPath: \.checkForUpdates) { Preferences.shared.checkForUpdates = newValue } } }
+品牌与应用身份,Sources/Pastory/App/SettingsWindow.swift,246,"                notice = String(format: ""已被 Pastory 的「%@」占用，换一个"".l, (Self.names[owner] ?? owner).l)"
+作者与命名空间；品牌与应用身份,Sources/Pastory/App/Theme.swift,75,"        if bundleID == ""com.cici.snipclip"" { return logo }"
+品牌与应用身份,Sources/Pastory/App/Theme.swift,96,    /// Product logo (Resources/Logo.png). Falls back to the source tree so self-tests find it too.
+品牌与应用身份,Sources/Pastory/App/Theme.swift,97,"    static let logo: NSImage? = resource(""Logo.png"")"
+品牌与应用身份,Sources/Pastory/App/Theme.swift,99,"    static let pushpin: NSImage? = resource(""Pushpin.png"")"
+第三方与许可,Sources/Pastory/App/Theme.swift,100,"    /// Brand typeface (Ysabeau Office, OFL) bundled in Resources/Fonts; registered for this process on first use."
+品牌与应用身份,Sources/Pastory/App/Theme.swift,120,    static let menuIcon: NSImage? = {
+品牌与应用身份,Sources/Pastory/App/Theme.swift,121,"        guard let base = resource(""MenuIcon.png"") else { return nil }"
+品牌与应用身份,Sources/Pastory/App/Theme.swift,124,"        if let hi = resource(""MenuIcon@2x.png"") {"
+自动更新与发布,Sources/Pastory/App/UpdateProgressWindow.swift,5,final class UpdateProgressWindow: NSObject {
+品牌与应用身份,Sources/Pastory/App/UpdateProgressWindow.swift,26,"        title.stringValue = String(format: ""正在下载 Pastory %@…"".l, version)"
+自动更新与发布,Sources/Pastory/App/UpdateProgressWindow.swift,98,"final class UpdateDownload: NSObject, URLSessionDownloadDelegate, @unchecked Sendable {"
+签名与公证,Sources/Pastory/App/Updater.swift,4,/// build is signed by the same team as the running one; before the app is notarized it only points at the release page.
+品牌与应用身份,Sources/Pastory/App/Updater.swift,5,/// The only network request Pastory ever makes; it carries no identifier (settings can turn it off).
+自动更新与发布,Sources/Pastory/App/Updater.swift,7,final class Updater {
+自动更新与发布,Sources/Pastory/App/Updater.swift,8,    static let shared = Updater()
+作者与命名空间；品牌与应用身份,Sources/Pastory/App/Updater.swift,9,"    static let repo = ""nothingbutcici/pastory"""
+自动更新与发布,Sources/Pastory/App/Updater.swift,10,"    static let releasesPage = URL(string: ""https://github.com/\(repo)/releases/latest"")!"
+自动更新与发布,Sources/Pastory/App/Updater.swift,25,"    static var currentVersion: String { Bundle.main.object(forInfoDictionaryKey: ""CFBundleShortVersionString"") as? String ?? ""0"" }"
+自动更新与发布,Sources/Pastory/App/Updater.swift,32,                await Updater.shared.check(interactive: false)
+自动更新与发布,Sources/Pastory/App/Updater.swift,33,"                Updater.shared.timer = Timer.scheduledTimer(withTimeInterval: 24 * 3600, repeats: true) { _ in"
+自动更新与发布,Sources/Pastory/App/Updater.swift,34,                    Task { @MainActor in await Updater.shared.check(interactive: false) }
+自动更新与发布,Sources/Pastory/App/Updater.swift,46,            guard Preferences.shared.checkForUpdates else { return .skipped }
+自动更新与发布,Sources/Pastory/App/Updater.swift,47,"            if let last = Preferences.shared.lastUpdateCheck, Date().timeIntervalSince(last) < 20 * 3600 { return .skipped }"
+自动更新与发布,Sources/Pastory/App/Updater.swift,51,        Preferences.shared.lastUpdateCheck = Date()
+品牌与应用身份,Sources/Pastory/App/Updater.swift,55,"                if interactive, !quiet { info(""已经是最新版本"".l, String(format: ""Pastory %@"".l, Self.currentVersion)) }"
+自动更新与发布,Sources/Pastory/App/Updater.swift,58,"            if !interactive, Preferences.shared.skippedVersion == release.version { return .skipped }"
+自动更新与发布,Sources/Pastory/App/Updater.swift,70,"        var req = URLRequest(url: URL(string: ""https://api.github.com/repos/\(repo)/releases/latest"")!)"
+品牌与应用身份,Sources/Pastory/App/Updater.swift,72,"        req.setValue(""Pastory/\(currentVersion)"", forHTTPHeaderField: ""User-Agent"")"
+品牌与应用身份,Sources/Pastory/App/Updater.swift,76,"        if code == 404 { throw NSError(domain: ""Pastory.Update"", code: 404, userInfo: [NSLocalizedDescriptionKey: ""暂无发布版本"".l]) }"
+品牌与应用身份,Sources/Pastory/App/Updater.swift,95,"    /// NSAlert shows plain text, so: pick the half for the UI language, drop the ""Pastory x.y"" title line the"
+自动更新与发布,Sources/Pastory/App/Updater.swift,97,"    static func notesForDisplay(_ raw: String, version: String, english: Bool) -> String {"
+品牌与应用身份,Sources/Pastory/App/Updater.swift,103,"            if line == ""Pastory \(version)"" || line == ""---"" { continue }"
+品牌与应用身份,Sources/Pastory/App/Updater.swift,130,"        a.messageText = String(format: ""Pastory %@ 可以更新了（当前 %@）"".l, r.version, Self.currentVersion)"
+自动更新与发布,Sources/Pastory/App/Updater.swift,131,"        a.informativeText = Self.notesForDisplay(r.notes, version: r.version, english: L.isEnglish)"
+签名与公证,Sources/Pastory/App/Updater.swift,132,        let canInstall = r.zipURL != nil && Self.canSelfInstall
+自动更新与发布,Sources/Pastory/App/Updater.swift,142,            Preferences.shared.skippedVersion = r.version
+签名与公证,Sources/Pastory/App/Updater.swift,157,"    /// Only a signed, notarized build knows who it is; an ad-hoc one must not replace itself with an unverifiable download."
+签名与公证,Sources/Pastory/App/Updater.swift,158,    static var canSelfInstall: Bool {
+签名与公证,Sources/Pastory/App/Updater.swift,159,"        guard let team = teamIdentifier(of: Bundle.main.bundleURL), !team.isEmpty else { return false }"
+签名与公证,Sources/Pastory/App/Updater.swift,164,    nonisolated static func teamIdentifier(of app: URL) -> String? {
+签名与公证,Sources/Pastory/App/Updater.swift,166,"        p.executableURL = URL(fileURLWithPath: ""/usr/bin/codesign"")"
+签名与公证,Sources/Pastory/App/Updater.swift,173,"        guard let line = out.split(separator: ""\n"").first(where: { $0.hasPrefix(""TeamIdentifier="") }) else { return nil }"
+签名与公证,Sources/Pastory/App/Updater.swift,174,"        let id = line.dropFirst(""TeamIdentifier="".count)"
+品牌与应用身份,Sources/Pastory/App/Updater.swift,182,"        let work = fm.temporaryDirectory.appendingPathComponent(""pastory-update-\(UUID().uuidString)"", isDirectory: true)"
+自动更新与发布,Sources/Pastory/App/Updater.swift,183,        let window = UpdateProgressWindow(version: version)
+自动更新与发布,Sources/Pastory/App/Updater.swift,184,        let download = UpdateDownload()
+品牌与应用身份,Sources/Pastory/App/Updater.swift,190,"            let zipFile = work.appendingPathComponent(""Pastory.zip"")"
+品牌与应用身份,Sources/Pastory/App/Updater.swift,197,"                let newApp = work.appendingPathComponent(""Pastory.app"")"
+签名与公证,Sources/Pastory/App/Updater.swift,199,"                // Same team as the running copy, chained to Apple's Developer ID root, and a valid signature — or we do not touch anything."
+签名与公证,Sources/Pastory/App/Updater.swift,200,                guard let mine = Self.teamIdentifier(of: target) else { throw InstallError.signature }
+签名与公证,Sources/Pastory/App/Updater.swift,202,"                    try Self.run(""/usr/bin/codesign"", [""--verify"", ""--deep"", ""--strict"","
+签名与公证,Sources/Pastory/App/Updater.swift,205,                guard Self.teamIdentifier(of: newApp) == mine else { throw InstallError.signature }
+签名与公证,Sources/Pastory/App/Updater.swift,237,"            return e == .signature ? ""下载的更新包没有通过签名校验，已放弃安装。"".l : ""下载的更新包不完整。"".l"
+品牌与应用身份,Sources/Pastory/App/Updater.swift,256,"            throw NSError(domain: ""Pastory.Update"", code: Int(p.terminationStatus), userInfo: [NSLocalizedDescriptionKey: msg.trimmingCharacters(in: .whitespacesAndNewlines)])"
+作者与命名空间；品牌与应用身份,Sources/Pastory/Capture/CaptureCoordinator.swift,15,"    static let source = ClipStore.Source(bundleID: ""com.cici.snipclip"", name: ""Pastory"")"
+品牌与应用身份,Sources/Pastory/Capture/PasteboardWriter.swift,3,/// Everything Pastory puts on the pasteboard carries `marker` = item id so the
+作者与命名空间；品牌与应用身份,Sources/Pastory/Capture/PasteboardWriter.swift,6,"    static let marker = NSPasteboard.PasteboardType(""com.cici.snipclip.marker"")"
+品牌与应用身份,Sources/Pastory/Capture/RecordingSession.swift,25,"        tmpURL = FileManager.default.temporaryDirectory.appendingPathComponent(""pastory-\(UUID().uuidString).mp4"")"
+品牌与应用身份,Sources/Pastory/Capture/ScreenRecorder.swift,11,"    private let queue = DispatchQueue(label: ""pastory.recorder.frames"")"
+品牌与应用身份,Sources/Pastory/Capture/ScreenRecorder.swift,94,"            throw NSError(domain: ""Pastory.Recorder"", code: 1, userInfo: [NSLocalizedDescriptionKey: ""cannot add video input""])"
+品牌与应用身份,Sources/Pastory/Capture/ScreenRecorder.swift,101,"        guard w.startWriting() else { throw w.error ?? NSError(domain: ""Pastory.Recorder"", code: 2) }"
+品牌与应用身份,Sources/Pastory/Capture/ScreenRecorder.swift,117,"        else if writer.status == .failed, !failed { failed = true; onFailure?(writer.error ?? NSError(domain: ""Pastory.Recorder"", code: 3)) }"
+品牌与应用身份,Sources/Pastory/Capture/ScreenRecorder.swift,136,"        if writer.status == .failed, !failed { failed = true; onFailure?(writer.error ?? NSError(domain: ""Pastory.Recorder"", code: 4)) }"
+品牌与应用身份,Sources/Pastory/Capture/Screenshotter.swift,41,"    /// Other Pastory windows, the shelf included, stay in the picture. Region / window shots are crops of this."
+品牌与应用身份,Sources/Pastory/Capture/SelectionOverlay.swift,307,    // Becoming main would activate the app: the menu bar would switch to Pastory's (empty) one and end up in the picture.
+品牌与应用身份,Sources/Pastory/Clipboard/ClipDB.swift,74,    /// linger in pastory.sqlite-wal. Called after sweeps and deletes; harmless if nothing is pending.
+品牌与应用身份,Sources/Pastory/Clipboard/ClipDB.swift,91,"        return NSError(domain: ""Pastory.SQLite"", code: 1, userInfo: [NSLocalizedDescriptionKey: ""\(what): \(msg)""])"
+品牌与应用身份,Sources/Pastory/Clipboard/ClipStore.swift,11,/// ~/Library/Application Support/Pastory/
+品牌与应用身份,Sources/Pastory/Clipboard/ClipStore.swift,12,"///   pastory.sqlite   the index (SQLite, WAL)"
+品牌与应用身份,Sources/Pastory/Clipboard/ClipStore.swift,25,"    private var dbURL: URL { root.appendingPathComponent(""pastory.sqlite"") }"
+品牌与应用身份,Sources/Pastory/Clipboard/ClipStore.swift,28,"    /// The real location — unless PASTORY_STORE is set, in which case that sandbox is ""default"" too,"
+品牌与应用身份,Sources/Pastory/Clipboard/ClipStore.swift,35,"        return support.appendingPathComponent(""Pastory"", isDirectory: true)"
+品牌与应用身份,Sources/Pastory/Clipboard/ClipStore.swift,122,"            a.messageText = ""Pastory 读写不了存储目录"".l"
+品牌与应用身份,Sources/Pastory/Clipboard/ClipStore.swift,123,"            a.informativeText = path + ""\n\n"" + msg + ""\n\n"" + ""在修好之前不会写入任何改动，也不会清理。检查磁盘空间后重新打开 Pastory。"".l"
+品牌与应用身份,Sources/Pastory/Clipboard/ClipStore.swift,359,    /// and saves once. Imported history always sorts behind everything Pastory captured itself: the batch keeps its
+品牌与应用身份,Sources/Pastory/Clipboard/Importer.swift,5,"/// Two paths: another Pastory store (exact), or any SQLite database (heuristic: text and image payloads,"
+品牌与应用身份,Sources/Pastory/Clipboard/Importer.swift,26,"    /// `url` may be a database file (any extension) or a folder: a Pastory store, or any folder that has"
+品牌与应用身份,Sources/Pastory/Clipboard/Importer.swift,31,"        let own = url.appendingPathComponent(""pastory.sqlite"")"
+品牌与应用身份,Sources/Pastory/Clipboard/Importer.swift,66,"        let tmp = FileManager.default.temporaryDirectory.appendingPathComponent(""pastory-import-\(UUID().uuidString)"", isDirectory: true)"
+品牌与应用身份,Sources/Pastory/Clipboard/Importer.swift,83,"            scan.entries = try pastory(db, itemsDir: file.deletingLastPathComponent().appendingPathComponent(""items""))"
+品牌与应用身份,Sources/Pastory/Clipboard/Importer.swift,95,    // MARK: Pastory → Pastory
+品牌与应用身份,Sources/Pastory/Clipboard/Importer.swift,97,"    private static func pastory(_ db: OpaquePointer, itemsDir: URL) throws -> [ClipStore.ImportEntry] {"
+品牌与应用身份,Sources/Pastory/Clipboard/Importer.swift,339,"            throw NSError(domain: ""Pastory.Import"", code: 1, userInfo: [NSLocalizedDescriptionKey: String(cString: sqlite3_errmsg(db))])"
+品牌与应用身份,Sources/Pastory/Shelf/DesktopNoteView.swift,109,"                Text(item.sourceAppName ?? ""Pastory"").font(.serif(15)).foregroundStyle(Color.ink).lineLimit(1)"
+品牌与应用身份,Sources/Pastory/Shelf/Exporter.swift,23,"                panel.nameFieldStringValue = ""Pastory \(stamp).png"""
+品牌与应用身份,Sources/Pastory/Shelf/Exporter.swift,36,"                let tmp = url.deletingLastPathComponent().appendingPathComponent("".\(url.lastPathComponent).pastory-tmp"")"
+品牌与应用身份,Sources/Pastory/Shelf/HowToCard.swift,3,"/// 「Pastory 怎么用」: an ordinary pinned text card with the short manual, seeded once for every user (new or"
+品牌与应用身份,Sources/Pastory/Shelf/HowToCard.swift,7,"    static let titleZH = ""Pastory 怎么用"", titleEN = ""How to use Pastory"""
+品牌与应用身份,Sources/Pastory/Shelf/SettingsPane.swift,12,"    @State private var hasAX = Permissions.hasAccessibility && ProcessInfo.processInfo.environment[""PASTORY_NOAX""] == nil      // self-test: render the not-granted state"
+品牌与应用身份,Sources/Pastory/Shelf/SettingsPane.swift,41,"                    hasAX = Permissions.hasAccessibility && ProcessInfo.processInfo.environment[""PASTORY_NOAX""] == nil; hasSR = Permissions.hasScreenRecording"
+自动更新与发布,Sources/Pastory/Shelf/SettingsPane.swift,50,"                            row(String(format: ""当前版本 %@"".l, Updater.currentVersion)) {"
+自动更新与发布,Sources/Pastory/Shelf/SettingsPane.swift,56,"                                            let outcome = await Updater.shared.check(interactive: true, quiet: true)"
+自动更新与发布,Sources/Pastory/Shelf/SettingsPane.swift,68,"                            row(""每天自动检查一次（app 唯一的联网请求，不带任何标识）"".l) { PaperToggle(isOn: $prefs.checkForUpdates) }"
+品牌与应用身份,Sources/Pastory/Shelf/SettingsPane.swift,321,"    /// Pick a .sqlite (or a Pastory folder), count what is inside, ask, import."
+品牌与应用身份,Sources/Pastory/Shelf/SettingsPane.swift,326,"            panel.message = ""选另一个剪贴板工具的数据库文件或它的数据文件夹，或另一台机器的 Pastory 文件夹"".l"
+品牌与应用身份,Sources/Pastory/Shelf/SettingsPane.swift,343,"                a.informativeText = String(format: ""来自 %@。已经在 Pastory 里的内容会自动跳过，Pin 会保留；导入的内容排在 Pastory 自己记录的后面。"".l, picked.lastPathComponent)"
+品牌与应用身份,Sources/Pastory/Shelf/ShelfView.swift,71,"            Text(""Pastory"").font(.script(42)).foregroundStyle(Color.onBrown)"
+第三方与许可,Sources/Pastory/Shelf/TextEditorWindow.swift,166,        textContainer?.maximumNumberOfLines = 1
+品牌与应用身份,Sources/Pastory/Shelf/WelcomeCard.swift,22,"                Text(""Pastory"").font(.serif(16)).foregroundStyle(Color.ink)"
+品牌与应用身份,Sources/Pastory/Shelf/WelcomeCard.swift,28,"            Text(""欢迎使用 Pastory"".l).font(.script(24)).foregroundStyle(Color.ink).lineLimit(1)"
+品牌与应用身份,Sources/Pastory/Shelf/WelcomeCard.swift,78,                if let p = Theme.menuIcon {
+签名与公证；品牌与应用身份,build.sh,2,"# Builds ""Pastory.app"". SIGN_ID=<Developer ID> keeps the screen-recording"
+签名与公证,build.sh,8,"# A Developer ID identity in the keychain is used automatically (same signature as the shipped app, so permissions"
+签名与公证,build.sh,10,"if [ -z ""${SIGN_ID:-}"" ]; then"
+签名与公证,build.sh,11,"    IDS=""$(security find-identity -v -p codesigning 2>/dev/null || true)"""
+签名与公证,build.sh,12,"    DEV=""$(echo ""$IDS"" | grep -o '""Developer ID Application: [^""]*""' | head -1 | tr -d '""' || true)"""
+签名与公证,build.sh,14,"        SIGN_ID=""$DEV"""
+签名与公证,build.sh,16,"        SIGN_ID=""-"""
+品牌与应用身份,build.sh,26,"        SLICES+=(""$(swift build -c ""$CONFIG"" --triple ""$a-apple-macosx"" --show-bin-path)/Pastory"")"
+品牌与应用身份,build.sh,29,"    lipo -create ""${SLICES[@]}"" -output build/Pastory-universal"
+品牌与应用身份,build.sh,30,"    BIN=""build/Pastory-universal"""
+品牌与应用身份,build.sh,33,"    BIN=""$(swift build -c ""$CONFIG"" --show-bin-path)/Pastory"""
+品牌与应用身份,build.sh,36,"APP=""build/Pastory.app"""
+品牌与应用身份,build.sh,39,"cp ""$BIN"" ""$APP/Contents/MacOS/Pastory"""
+联系与赞助；品牌与应用身份,build.sh,42,for f in AppIcon.icns Logo.png Pushpin.png MenuIcon.png MenuIcon@2x.png WeChatGroup.png Coffee.png; do
+签名与公证,build.sh,46,# A Developer ID identity gets the hardened runtime + secure timestamp that notarization requires.
+签名与公证,build.sh,47,SIGN_FLAGS=()
+签名与公证,build.sh,48,"case ""$SIGN_ID"" in ""Developer ID Application""*) SIGN_FLAGS=(--options runtime --timestamp);; esac"
+签名与公证；品牌与应用身份,build.sh,49,"if ! codesign --force --sign ""$SIGN_ID"" ${SIGN_FLAGS[@]+""${SIGN_FLAGS[@]}""} --entitlements Resources/Pastory.entitlements ""$APP"" 2>/dev/null; then"
+签名与公证,build.sh,50,"    codesign --force --sign ""$SIGN_ID"" ${SIGN_FLAGS[@]+""${SIGN_FLAGS[@]}""} ""$APP"""
+签名与公证,build.sh,52,"echo ""→ $APP (signed: $SIGN_ID)"""
+签名与公证；品牌与应用身份,dist.sh,2,"# Builds the shareable zip: dist/Pastory-<version>.zip — Developer ID signed, notarized and stapled when the"
+签名与公证,dist.sh,3,# identity + keychain profile exist (see docs/DEVELOPMENT.md → 签名与公证); ad-hoc otherwise.
+签名与公证,dist.sh,6,"# Signing: a ""Developer ID Application"" identity in the keychain is used automatically (hardened runtime,"
+签名与公证；品牌与应用身份,dist.sh,7,"# timestamp), then the zip is notarized with the keychain profile NOTARY_PROFILE (default ""pastory-notary"","
+签名与公证,dist.sh,8,"# created once with `xcrun notarytool store-credentials`) and the ticket is stapled. No identity → ad-hoc,"
+签名与公证,dist.sh,10,"DEV_ID=""$( (security find-identity -v -p codesigning 2>/dev/null || true) | grep -o '""Developer ID Application: [^""]*""' | head -1 | tr -d '""' || true)"""
+签名与公证；品牌与应用身份,dist.sh,11,"NOTARY_PROFILE=""${NOTARY_PROFILE:-pastory-notary}"""
+签名与公证,dist.sh,13,"ARCHS=""arm64 x86_64"" SIGN_ID=""${DEV_ID:--}"" ./build.sh"
+自动更新与发布；品牌与应用身份,dist.sh,14,"VERSION=""$(/usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' build/Pastory.app/Contents/Info.plist)"""
+品牌与应用身份,dist.sh,16,"rm -f ""dist/Pastory-$VERSION.zip"""
+品牌与应用身份,dist.sh,17,xattr -cr build/Pastory.app
+品牌与应用身份,dist.sh,18,"ditto -c -k --sequesterRsrc --keepParent build/Pastory.app ""dist/Pastory-$VERSION.zip"""
+签名与公证,dist.sh,19,"if [ -n ""$DEV_ID"" ]; then"
+签名与公证,dist.sh,20,"    echo ""→ notarizing as $DEV_ID (profile $NOTARY_PROFILE)…"""
+签名与公证；品牌与应用身份,dist.sh,21,"    xcrun notarytool submit ""dist/Pastory-$VERSION.zip"" --keychain-profile ""$NOTARY_PROFILE"" --wait"
+签名与公证；品牌与应用身份,dist.sh,22,    xcrun stapler staple build/Pastory.app
+品牌与应用身份,dist.sh,23,"    rm -f ""dist/Pastory-$VERSION.zip"""
+品牌与应用身份,dist.sh,24,"    ditto -c -k --sequesterRsrc --keepParent build/Pastory.app ""dist/Pastory-$VERSION.zip""   # re-zip with the ticket inside"
+签名与公证；品牌与应用身份,dist.sh,25,    spctl --assess --type execute -vv build/Pastory.app 2>&1 | tail -2
+签名与公证,dist.sh,26,    NOTARIZED=1
+品牌与应用身份,dist.sh,29,Pastory 首次打开说明
+品牌与应用身份,dist.sh,33,1. 解压后把 Pastory.app 拖进「应用程序」文件夹。
+品牌与应用身份,dist.sh,34,2. 第一次打开：双击 Pastory.app。
+签名与公证,dist.sh,35,   这个包已经过 Apple 公证，系统最多问一句「这是从互联网下载的应用，确定打开？」，点「打开」即可。
+品牌与应用身份,dist.sh,36,3. Pastory 没有主窗口：打开后只在屏幕右上角菜单栏出现一个手写的 P 图标，第一次会自动弹出底部的剪贴板面板。
+品牌与应用身份,dist.sh,38,4. 第一次截图会请求「屏幕录制」权限：系统设置 › 隐私与安全性 › 屏幕录制，打开 Pastory，然后退出 Pastory 重新打开。
+品牌与应用身份,dist.sh,42,  xattr -dr com.apple.quarantine /Applications/Pastory.app
+品牌与应用身份,dist.sh,43,  open /Applications/Pastory.app
+品牌与应用身份,dist.sh,45,所有内容只存在本机 ~/Library/Application Support/Pastory/，除每天一次检查更新外不联网、不上传。
+品牌与应用身份,dist.sh,50,Pastory — first launch
+品牌与应用身份,dist.sh,53,1. Unzip and drag Pastory.app into Applications.
+签名与公证,dist.sh,54,2. Double-click it. The app is notarized by Apple; at most macOS asks once whether to open an app
+品牌与应用身份,dist.sh,56,3. Pastory has no main window: look for the handwritten P in the menu bar. The clipboard panel opens by itself on first launch.
+品牌与应用身份,dist.sh,57,"4. The first screenshot asks for Screen Recording permission: turn Pastory on, then relaunch it."
+品牌与应用身份,dist.sh,61,"Everything stays in ~/Library/Application Support/Pastory/ on this Mac. No network apart from a daily update check, no upload."
+品牌与应用身份,dist.sh,62,Still won't open? In Terminal:  xattr -dr com.apple.quarantine /Applications/Pastory.app && open /Applications/Pastory.app
+签名与公证,dist.sh,64,"if [ -z ""${NOTARIZED:-}"" ]; then"
+签名与公证,dist.sh,65,"    # Not notarized: swap the two ""first open"" lines for the Gatekeeper walk-through."
+品牌与应用身份,dist.sh,67,      -e 's|^2. 第一次打开：双击 Pastory.app。$|2. 第一次打开：双击 Pastory.app。系统会说「无法打开，因为 Apple 无法检查其是否包含恶意软件」，点「完成」。|' \
+签名与公证,dist.sh,68,      -e 's|^   这个包已经过 Apple 公证，系统最多问一句「这是从互联网下载的应用，确定打开？」，点「打开」即可。$|   再去「系统设置 › 隐私与安全性」，往下滚到底，点「仍要打开」，输入一次密码。（这个包未经公证，只需处理这一次。）|' \
+签名与公证,dist.sh,69,"      -e 's|^2. Double-click it. The app is notarized by Apple; at most macOS asks once whether to open an app$|2. Double-click it. macOS will say it cannot verify the app: click Done, then System Settings › Privacy \& Security,|' \"
+签名与公证,dist.sh,70,"      -e 's|^   downloaded from the internet — click Open.$|   scroll to the bottom and click ""Open Anyway"" (password once). This build is not notarized; it happens only the first time.|' \"
+签名与公证；品牌与应用身份,dist.sh,73,"echo ""→ dist/Pastory-$VERSION.zip ($(du -h ""dist/Pastory-$VERSION.zip"" | cut -f1))${NOTARIZED:+ · notarized & stapled}"""
+品牌与应用身份,docs/DEVELOPMENT.md,1,# Pastory 开发约定
+品牌与应用身份,docs/DEVELOPMENT.md,5,Pastory 是 macOS 15+ 的菜单栏工具：剪贴板历史面板 + 截图标注 / 识别文字 / 区域录屏。SwiftPM，AppKit + SwiftUI，只用 Apple 框架和系统 libsqlite3，没有第三方依赖。
+签名与公证；品牌与应用身份,docs/DEVELOPMENT.md,11,build.sh             swift build → build/Pastory.app → codesign（有 Developer ID 用它，否则 ad-hoc）
+签名与公证；品牌与应用身份,docs/DEVELOPMENT.md,12,dist.sh              universal 构建 + 公证 + 盖章 → dist/Pastory-<版本>.zip
+品牌与应用身份；第三方与许可,docs/DEVELOPMENT.md,14,Resources/           Info.plist、entitlements（空）、AppIcon.icns、Logo / MenuIcon / Pushpin、Fonts/（Caveat、Ysabeau Office 及各自的 OFL）
+品牌与应用身份,docs/DEVELOPMENT.md,15,Sources/Pastory/
+作者与命名空间；品牌与应用身份,docs/DEVELOPMENT.md,26,- bundle id 是 `com.cici.snipclip`（产品早期代号），**不能改**：改了用户的屏幕录制、辅助功能授权和全部设置都会丢。
+品牌与应用身份,docs/DEVELOPMENT.md,31,./build.sh                 # 本机架构，build/Pastory.app
+签名与公证；品牌与应用身份,docs/DEVELOPMENT.md,32,./dist.sh                  # arm64 + x86_64，签名、公证、盖章，dist/Pastory-<版本>.zip 和 首次打开.txt
+自动更新与发布,docs/DEVELOPMENT.md,33,./release.sh notes.md      # 先改 Resources/Info.plist 的 CFBundleShortVersionString 并提交，再跑
+签名与公证；品牌与应用身份,docs/DEVELOPMENT.md,36,只需要 Command Line Tools。没有 Developer ID 证书的机器上两个脚本自动退回 ad-hoc，`首次打开.txt` 会换成「仍要打开」版本。公证凭据是钥匙串 profile `pastory-notary`（`xcrun notarytool store-credentials`），仓库里没有任何密钥。发布包用 Developer ID 签名 + hardened runtime，`spctl --assess` 应显示 `source=Notarized Developer ID`。
+作者与命名空间；签名与公证；自动更新与发布；品牌与应用身份,docs/DEVELOPMENT.md,38,"**更新器**（`App/Updater.swift`）：启动 30 秒后、之后每 24 小时读 `api.github.com/repos/nothingbutcici/pastory/releases/latest`，这是 app 唯一的网络请求，可在设置关闭。tag 必须是 `v<版本>`，资产是 `.zip`。只有 Developer ID 签名的包才自动安装：下载（有进度窗、可取消、30 秒无响应判失败）→ 后台解压 → `codesign --verify -R=""anchor apple generic and certificate leaf[subject.OU] = <本 Team>""` → TeamIdentifier 与运行中的自己一致 → `replaceItemAt` 原地替换 → 重启。ad-hoc 包、被 App Translocation 挪走的包只打开下载页。"
+品牌与应用身份,docs/DEVELOPMENT.md,42,一切在 `~/Library/Application Support/Pastory/`，位置固定不可选，不上云：
+品牌与应用身份,docs/DEVELOPMENT.md,46,| `pastory.sqlite` | 索引（SQLite，WAL）：id、kind(text/url/image/files/video)、创建 / 修改时间、来源 app、预览片段、OCR 文本、Pin、标题、内容哈希；另有 `tombstones` 表 |
+品牌与应用身份,docs/DEVELOPMENT.md,65,"BIN=""./build/Pastory.app/Contents/MacOS/Pastory"""
+品牌与应用身份,docs/DEVELOPMENT.md,66,S=/tmp/pastory-test      # 任何会写库的自测都必须指到一个临时目录
+品牌与应用身份,docs/DEVELOPMENT.md,67,"PASTORY_STORE=$S ""$BIN"" --selftest shelf <out.png>       # 离屏渲染剪贴板面板（含样例）"
+品牌与应用身份,docs/DEVELOPMENT.md,68,"PASTORY_STORE=$S ""$BIN"" --selftest shelfsearch <out.png> # 搜索等待态"
+品牌与应用身份,docs/DEVELOPMENT.md,69,"PASTORY_STORE=$S ""$BIN"" --selftest search                # 全文匹配、缓存失效、取消旧查询和选择状态"
+品牌与应用身份,docs/DEVELOPMENT.md,70,"PASTORY_STORE=$S ""$BIN"" --selftest settings <out.png>    # 设置页"
+联系与赞助；品牌与应用身份,docs/DEVELOPMENT.md,71,"PASTORY_STORE=$S ""$BIN"" --selftest contact <out.png>     # 联系我页"
+品牌与应用身份,docs/DEVELOPMENT.md,72,"PASTORY_STORE=$S ""$BIN"" --selftest welcome <out.png>     # 欢迎卡（PASTORY_HEIGHT 试小屏）"
+品牌与应用身份,docs/DEVELOPMENT.md,73,"PASTORY_STORE=$S ""$BIN"" --selftest note <out.png>        # 桌面便签"
+品牌与应用身份,docs/DEVELOPMENT.md,74,"PASTORY_STORE=$S ""$BIN"" --selftest editors <out.png>     # 文本 / 图片编辑窗"
+品牌与应用身份,docs/DEVELOPMENT.md,75,"PASTORY_STORE=$S ""$BIN"" --selftest ocrpanel <out.png>    # 识别文字面板"
+品牌与应用身份,docs/DEVELOPMENT.md,76,"PASTORY_STORE=$S ""$BIN"" --selftest updatewin <out.png>   # 更新进度窗"
+品牌与应用身份,docs/DEVELOPMENT.md,77,"PASTORY_STORE=$S ""$BIN"" --selftest annotate <out.png>    # 标注画布 + 工具条，另存 <out>.flat.png 为合成结果"
+品牌与应用身份,docs/DEVELOPMENT.md,78,"PASTORY_STORE=$S ""$BIN"" --selftest annotationtext <out.png> # 文字框缩放、换行、输入法和编辑/导出排版"
+品牌与应用身份,docs/DEVELOPMENT.md,79,"PASTORY_STORE=$S ""$BIN"" --selftest preview <out.png>     # 录屏预览窗"
+自动更新与发布；品牌与应用身份,docs/DEVELOPMENT.md,80,"PASTORY_STORE=$S ""$BIN"" --selftest retention | tombstone | heic | ingest | writer | gif | ocr | updater | l10n"
+品牌与应用身份,docs/DEVELOPMENT.md,81,"PASTORY_STORE=$S ""$BIN"" --selftest import <db>           # 用一个外来 SQLite 验证导入"
+品牌与应用身份,docs/DEVELOPMENT.md,82,"PASTORY_STORE=$S ""$BIN"" --selftest download <url> [out]  # 用更新器的下载器真实下载一次"
+品牌与应用身份,docs/DEVELOPMENT.md,83,"PASTORY_STORE=$S ""$BIN"" --selftest clipboard 10          # 监听 10 秒，打印记录到的条目"
+品牌与应用身份,docs/DEVELOPMENT.md,84,PASTORY_LANG=en …                                        # 任何渲染类自测加这个变量出英文
+品牌与应用身份,docs/DEVELOPMENT.md,87,- `PASTORY_STORE` / `PASTORY_LANG` 只在命令行带 `--selftest` 时生效（`App/Sandbox.swift`）；正常启动一律忽略，壳里残留的变量不会把 app 指到沙箱。
+品牌与应用身份,docs/DEVELOPMENT.md,88,- 会写库的子命令要求 `PASTORY_STORE` 非空且不在 `~/Library/Application Support` 之下，否则直接拒绝。新增会写库的子命令，第一件事是加进 `SelfTest.swift` 的 mutating 名单。
+品牌与应用身份,docs/DEVELOPMENT.md,95,- **桌面便签**（`Shelf/DesktopNotes.swift`、`DesktopNoteView.swift`）：把面板里的卡向上拖出面板边界即成为桌面便签（松手在面板上=取消），右键也有「贴到桌面」；便签是同一张纸卡、全文展示（文本最高屏高 60%，超出卡内滚动），底部是 编辑 / 图层 / 关闭；单击复制、双击贴进前台应用；非激活面板，不抢焦点。贴上即自动 Pin；面板里的卡保留并带 note 标记；卡被删便签同删。层级逐张决定（便签底部的图层键 / 右键）：浮于窗口上（默认，拖出时一定看得见）或仅桌面显示（桌面图标之上、所有应用窗口之下）；所有 Space 可见。发现路径：欢迎卡「试一试」多一条、卡片右键「贴到桌面」、以及首次启动本版本时种进历史的 Pin 卡「Pastory 怎么用」（`Shelf/HowToCard.swift`，普通卡片，删了不再出现）。位置存在偏好 `desktopNotes`，启动恢复并夹回可见屏幕。`--selftest note` 渲染。
+联系与赞助,docs/DEVELOPMENT.md,96,- **面板键盘**：双击 = 复制、收起并粘贴到刚才的应用；⏎ = 复制并收起，只有设置选了「双击 + 回车」且这张卡是用方向键亲手选中的才同样粘贴（搜索、筛选、删除后自动落到的高亮都不算；点击卡片后键盘会交还给原应用，所以鼠标选中后的回车到不了面板）；← → ↑ ↓ 选；空格 Quick Look；⌘P Pin；⌘S 保存到本地；⌫ 删除（Pin 项确认）；⌘F 搜索；直接打字即搜索；⎋ 依次关闭重命名框 / 返回 / 清空搜索 / 收起。设置页 / 联系我打开时只认 ⎋ 和 ⌘F。
+品牌与应用身份,docs/DEVELOPMENT.md,103,- **导入**（`Clipboard/Importer.swift`）：永远在临时副本上读；Pastory 库按 schema 精确导，Paste（wiheads）有专门读法，其他 SQLite 按启发式；目录扫描按文件头识别、最多三层、超过 6 个库或过宽目录（家目录、Library 等）直接拒绝；id / ext 含 `/` 或 `..` 的行跳过。导入的一批整体排在自己记录之后；保留期不是「永不删除」时只给「导入并改为永不删除」。
+品牌与应用身份,docs/DEVELOPMENT.md,105,- **权限**：屏幕录制在第一次截图时请求（不在启动时）；系统弹窗每次启动最多一次，之后被拒时弹自家提示，第一个按钮是「重新启动 Pastory」（授权只对新进程生效）。辅助功能只用于双击 / 回车粘贴，缺失时退化为只复制并收起。从终端直接启动的 Pastory 权限会记在终端名下，正式使用要从 Finder / 启动台打开。
+品牌与应用身份,docs/DEVELOPMENT.md,110,纸感：深棕桌面（`Theme.drawGround` / `drawDesk`）+ 米色纸片（`Theme.drawPaper`），当前剪贴板那张卡和选中态是浅蓝纸，按钮统一 `Theme.paperButton`，没有警告色。正文宋体，标题和「Pastory」字样手写体（Caveat；品牌字 Ysabeau Office 只用于「Pastory」）。标注调色盘 = 紫 + #E9631A / #C56F8C / #A9C2E0 / #59382C / #1E151C / #EBEBDF。标注线条是手绘感（路径打平后加低频噪声画两遍，固定 seed，预览与导出一致）。logo 与图标来自作者的品牌稿，不在仓库。
+品牌与应用身份,docs/DEVELOPMENT.md,117,- 不上云；要跨设备自行把存储目录放进 iCloud Drive，或用「导入」把另一台机器的 Pastory 文件夹导过来（文本 / 链接 / 图片）。
+自动更新与发布,release.sh,2,# Cut a GitHub release from the current tree: bump nothing here — set CFBundleShortVersionString in
+品牌与应用身份,release.sh,3,"# Resources/Info.plist first, commit, then run this. Uploads dist/Pastory-<version>.zip; the app's"
+自动更新与发布,release.sh,7,"VERSION=""$(/usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' Resources/Info.plist)"""
+自动更新与发布,release.sh,11,"if git rev-parse ""v$VERSION"" >/dev/null 2>&1; then echo ""tag v$VERSION already exists — bump CFBundleShortVersionString first""; exit 2; fi"
+自动更新与发布；品牌与应用身份,release.sh,12,"git tag -a ""v$VERSION"" -m ""Pastory $VERSION"""
+自动更新与发布,release.sh,13,"git push origin ""v$VERSION"""
+自动更新与发布；品牌与应用身份,release.sh,14,"gh release create ""v$VERSION"" ""dist/Pastory-$VERSION.zip"" --title ""Pastory $VERSION"" --notes-file ""$NOTES"""
+作者与命名空间；品牌与应用身份,release.sh,15,"echo ""→ https://github.com/nothingbutcici/pastory/releases/tag/v$VERSION"""
