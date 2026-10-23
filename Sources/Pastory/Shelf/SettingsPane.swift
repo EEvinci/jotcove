@@ -45,6 +45,21 @@ struct SettingsPane: View {
                 HStack(alignment: .top, spacing: 16) {
                     VStack(spacing: 16) {
                         section("关于".l) {
+                            HStack(spacing: 12) {
+                                IdentityPortrait(size: 44)
+                                VStack(alignment: .leading, spacing: 4) {
+                                    Text("Pastory · Evinci").font(.serif(17, bold: true)).foregroundStyle(Color.ink)
+                                    Text("可可手记".l).font(.serif(12)).foregroundStyle(Color.inkMuted)
+                                }
+                                Spacer()
+                                HStack(spacing: 5) {
+                                    ForEach(0..<5) { i in
+                                        Circle().fill([Color(nsColor: Theme.brown), .paperBlue, .lavender, .butter, .mint][i])
+                                            .frame(width: 12, height: 12)
+                                    }
+                                }
+                            }
+                            .padding(.horizontal, 16).padding(.vertical, 8)
                             row(String(format: "当前版本 %@".l, AppIdentity.version)) {
                                 EmptyView()
                             }
@@ -182,8 +197,8 @@ struct SettingsPane: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.bottom, 8)
         .background(
-            RoundedRectangle(cornerRadius: 6).fill(Paint.paper)
-                .shadow(color: .black.opacity(0.35), radius: 8, x: 1, y: 4)      // the sheet casts it, the type does not
+            RoundedRectangle(cornerRadius: 10).fill(Paint.paper)
+                .shadow(color: .black.opacity(0.18), radius: 8, x: 1, y: 4)      // the sheet casts it, the type does not
                 .padding(16).drawingGroup().padding(-16)                         // one bitmap per sheet: scrolling just moves it
         )
     }

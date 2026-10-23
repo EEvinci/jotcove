@@ -26,6 +26,9 @@ enum L {
     /// Source strings → English. A plain array of pairs: a duplicate here must never be a launch crash
     /// (a dictionary literal traps on duplicate keys); `--selftest l10n` reports duplicates and unused keys.
     static let pairs: [(String, String)] = [
+        // Personal stationery
+        ("灵感，留在手边。", "Keep inspiration close."),
+        ("可可手记", "Cocoa notes"),
         // Capture chrome
         ("复制", "Copy"), ("识别文字", "Recognize Text"), ("撤销 ⌘Z", "Undo ⌘Z"), ("取消 ⎋", "Cancel ⎋"),
         ("完成 ⏎ · 复制到剪贴板", "Done ⏎ · copy to clipboard"), ("小", "S"), ("中", "M"), ("大", "L"),

@@ -3,19 +3,29 @@ import AppKit
 /// One place for the look: brown desk, cream paper, light-blue accent, ink type.
 enum Theme {
 
-    // Legacy accent still used by the annotation palette's first swatch
-    static let purple = NSColor(srgbRed: 0.71, green: 0.64, blue: 0.95, alpha: 1)       // #B5A3F2
-    // Paper theme (shelf): dark brown ground, cream paper, one light-blue paper for the "current" card
-    static let brown = NSColor(srgbRed: 0.17, green: 0.13, blue: 0.12, alpha: 1)        // #2B211E
-    static let brownDeep = NSColor(srgbRed: 0.14, green: 0.11, blue: 0.10, alpha: 1)    // #241C19
-    static let paper = NSColor(srgbRed: 0.95, green: 0.93, blue: 0.89, alpha: 1)        // #F2EDE3
-    static let paperDim = NSColor(srgbRed: 0.90, green: 0.87, blue: 0.82, alpha: 1)     // #E6DFD1
-    static let paperBlue = NSColor(srgbRed: 0.74, green: 0.84, blue: 0.90, alpha: 1)    // #BDD6E5
-    static let paperBlueDeep = NSColor(srgbRed: 0.50, green: 0.65, blue: 0.74, alpha: 1)// #7FA5BD
-    static let ink = NSColor(srgbRed: 0.16, green: 0.14, blue: 0.13, alpha: 1)          // #2A2521
-    static let inkMuted = NSColor(srgbRed: 0.43, green: 0.40, blue: 0.37, alpha: 1)     // #6E665F
-    static let onBrown = NSColor(srgbRed: 0.93, green: 0.90, blue: 0.86, alpha: 1)      // text on the brown ground
-    static let onBrownMuted = NSColor(srgbRed: 0.68, green: 0.63, blue: 0.59, alpha: 1)
+    // Evinci's stationery: cocoa, mist blue and warm greige; small pastel accents.
+    private static func rgb(_ hex: UInt32) -> NSColor {
+        NSColor(srgbRed: CGFloat((hex >> 16) & 255) / 255,
+                green: CGFloat((hex >> 8) & 255) / 255,
+                blue: CGFloat(hex & 255) / 255, alpha: 1)
+    }
+    static let purple = rgb(0xB8A8C4)
+    static let brown = rgb(0x4B382F)
+    static let brownDeep = rgb(0x352A25)
+    static let paper = rgb(0xF0ECE4)
+    static let paperDim = rgb(0xE2DAD0)
+    static let paperBlue = rgb(0xBDCDD5)
+    static let paperBlueDeep = rgb(0x4A687A)
+    static let ink = rgb(0x3E3029)
+    static let inkMuted = rgb(0x716257)
+    static let onBrown = rgb(0xF3EDE3)
+    static let onBrownMuted = rgb(0xC9BAAD)
+    static let lavender = rgb(0xC8B9D4)
+    static let butter = rgb(0xE7CA7F)
+    static let mint = rgb(0xB9CDBB)
+    static let sage = rgb(0xCED5B3)
+    static let portrait = resource("Identity/EvinciPortrait.png")
+    static let character = resource("Identity/EvinciCharacter.png")
 
     /// Serif for the paper theme (Songti SC covers CJK and Latin).
     nonisolated(unsafe) private static var fontCache: [String: NSFont] = [:]
@@ -56,9 +66,9 @@ enum Theme {
 
     /// Paper / desk with the grain already multiplied in. SwiftUI tiles these as `ImagePaint`;
     /// a live `blendMode(.multiply)` per card forced an offscreen pass for every card on every frame.
-    static let paperTile = bakedTile(paper, grain: 0.11)
-    static let paperBlueTile = bakedTile(paperBlue, grain: 0.11)
-    static let deskTile = bakedTile(brown, grain: 0.22)
+    static let paperTile = bakedTile(paper, grain: 0.035)
+    static let paperBlueTile = bakedTile(paperBlue, grain: 0.035)
+    static let deskTile = bakedTile(brown, grain: 0.07)
     private static func bakedTile(_ color: NSColor, grain: CGFloat) -> NSImage {
         let n = noiseTile.size
         return NSImage(size: n, flipped: false) { r in
@@ -167,7 +177,7 @@ enum Theme {
         path.addClip()
         brown.setFill()
         path.bounds.fill()
-        drawGrain(in: path.bounds, opacity: 0.16)
+        drawGrain(in: path.bounds, opacity: 0.07)
         NSGraphicsContext.restoreGraphicsState()
         onBrown.withAlphaComponent(0.22).setStroke()
         path.lineWidth = 1
@@ -188,7 +198,7 @@ enum Theme {
     static func drawGround(in r: CGRect) {
         brown.setFill()
         r.fill()
-        drawGrain(in: r, opacity: 0.16)
+        drawGrain(in: r, opacity: 0.07)
     }
 
     /// Paper card with a soft shadow on its layer; `drawPaper` paints the face.

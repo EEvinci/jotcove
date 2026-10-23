@@ -35,6 +35,15 @@ struct ClipCardView: View, Equatable {
     @State private var catchSecondClick = false
 
     private var paperPaint: ImagePaint { onClipboard ? Paint.paperBlue : Paint.paper }
+    private var accent: Color {
+        switch item.kind {
+        case .text: return .butter
+        case .url: return .mint
+        case .image: return .lavender
+        case .video: return .paperBlue
+        case .files: return .sage
+        }
+    }
     private var ticket: TicketShape { TicketShape(notchFromBottom: index % 2 == 0 ? Self.stubHeight : nil) }
 
     var body: some View {
@@ -51,7 +60,8 @@ struct ClipCardView: View, Equatable {
         .frame(width: Self.width)
         .clipShape(ticket)
         // The sheet casts the shadow; shadowing the whole subtree (text, thumbnails) re-rasterised every card on every change.
-        .background(ticket.fill(paperPaint).shadow(color: .black.opacity(selected ? 0.55 : 0.4), radius: selected ? 14 : 9, x: 2, y: selected ? 9 : 6))
+        .background(ticket.fill(paperPaint).shadow(color: .black.opacity(selected ? 0.28 : 0.18), radius: selected ? 10 : 7, x: 1, y: selected ? 7 : 4))
+        .overlay(ticket.stroke(Color.paperBlue.opacity(selected ? 0.8 : 0), lineWidth: 1.5))
         .overlay(alignment: .top) { decoration }
         .offset(y: selected ? -6 : 0)
         .animation(.easeOut(duration: 0.1), value: selected)
@@ -239,6 +249,8 @@ struct ClipCardView: View, Equatable {
 
     private var captionRow: some View {
         HStack(spacing: 8) {
+            Circle().fill(accent).frame(width: 7, height: 7)
+                .overlay(Circle().stroke(Color.ink.opacity(0.18), lineWidth: 0.5))
             Text(note.map { "\(kindLabel) · \($0)" } ?? kindLabel).font(.serif(14)).foregroundStyle(Color.ink).lineLimit(1)
             Spacer(minLength: 0)
             if onClipboard {
@@ -248,7 +260,8 @@ struct ClipCardView: View, Equatable {
                 }
                 .foregroundStyle(Color.ink)
                 .padding(.horizontal, 10).padding(.vertical, 4)
-                .overlay(Capsule().stroke(Color.ink.opacity(0.8), lineWidth: 1))
+                .background(Color.mint.opacity(0.7), in: Capsule())
+                .overlay(Capsule().stroke(Color.ink.opacity(0.25), lineWidth: 0.7))
             }
         }
         .padding(.horizontal, 18)

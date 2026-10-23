@@ -16,60 +16,40 @@ struct WelcomeCard: View {
         VStack(alignment: .leading, spacing: 0) {
             // Header, as on a clip card: app icon · name, then a rule.
             HStack(spacing: 8) {
-                if let logo = Theme.logo {
-                    Image(nsImage: logo).resizable().interpolation(.high).frame(width: 22, height: 22).clipShape(RoundedRectangle(cornerRadius: 5))
+                IdentityPortrait(size: 32)
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("欢迎使用 Pastory".l).font(.script(24)).foregroundStyle(Color.ink).lineLimit(1)
+                    Text("灵感，留在手边。".l).font(.serif(11)).foregroundStyle(Color.inkMuted)
                 }
-                Text("Pastory").font(.serif(16)).foregroundStyle(Color.ink)
                 Spacer()
             }
-            .padding(.horizontal, 18).padding(.top, 26).padding(.bottom, 4)
+            .padding(.horizontal, 18).padding(.top, 18).padding(.bottom, 8)
             Rectangle().fill(Color.ink.opacity(0.7)).frame(height: 1).padding(.horizontal, 18)
-            // Handwritten title between the two rules.
-            Text("欢迎使用 Pastory".l).font(.script(24)).foregroundStyle(Color.ink).lineLimit(1)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.horizontal, 18).padding(.top, 4).padding(.bottom, 2)
-                .overlay(alignment: .bottom) { Rectangle().fill(Color.ink.opacity(0.6)).frame(height: 1).padding(.horizontal, 18) }
-
-            // Two columns side by side, so the card is as tall as any other card and no taller.
-            GeometryReader { geo in
-            ScrollView(.vertical, showsIndicators: false) {
-            VStack(spacing: 0) {
-            Spacer(minLength: 14)
-            HStack(spacing: 0) {
-            Spacer(minLength: 0)
-            HStack(alignment: .top, spacing: 0) {
-            VStack(alignment: .leading, spacing: 0) {
-                heading("设置常用快捷键".l)
-                step(icon: "clipboard", title: "显示 / 隐藏剪贴板".l, key: Preferences.Key.hotkeyShelf, tag: "shelf")
-                step(icon: "crop", title: "截图".l, key: Preferences.Key.hotkeyCapture, tag: "capture")
-                Spacer(minLength: 0)
+            // Keep the guide readable at short shelf heights; the footer stays outside the scroll view.
+            ScrollView(.vertical, showsIndicators: true) {
+                HStack(alignment: .top, spacing: 16) {
+                    VStack(alignment: .leading, spacing: 0) {
+                        heading("设置常用快捷键".l)
+                        step(icon: "clipboard", title: "显示 / 隐藏剪贴板".l, key: Preferences.Key.hotkeyShelf, tag: "shelf")
+                        step(icon: "crop", title: "截图".l, key: Preferences.Key.hotkeyCapture, tag: "capture")
+                    }
+                    .frame(width: L.isEnglish ? 190 : 154, alignment: .leading)
+                    VStack(alignment: .leading, spacing: 0) {
+                        heading("试一试".l)
+                        todo(done: model.welcomeTried.contains("shelf"),
+                             text: shelfKey.isSet ? String(format: "按 %@ 打开或收起剪贴板".l, shelfKey.display) : "先给剪贴板设一个快捷键".l)
+                        todo(done: model.welcomeTried.contains("capture"),
+                             text: captureKey.isSet ? String(format: "按 %@ 截一张图".l, captureKey.display) : "先给截图设一个快捷键".l)
+                        todo(done: model.welcomeTried.contains("copy"), text: "复制一段文本".l)
+                        todo(done: model.welcomeTried.contains("pin"), text: "将一个卡片 Pin 起来".l, pin: true)
+                        todo(done: model.welcomeTried.contains("desktop"), text: "把一张卡片向上拖出面板，贴到桌面上".l)
+                        todo(done: false, text: "点击「开始使用」，卡片消失".l)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                }
+                .padding(.horizontal, 18).padding(.vertical, 12)
             }
-            .fixedSize(horizontal: true, vertical: false)
-            Rectangle().fill(Color.ink.opacity(0.15)).frame(width: 1).padding(.vertical, 4).padding(.horizontal, 20)
-            VStack(alignment: .leading, spacing: 0) {
-                heading("试一试".l)
-                todo(done: model.welcomeTried.contains("shelf"),
-                     text: shelfKey.isSet ? String(format: "按 %@ 打开或收起剪贴板".l, shelfKey.display) : "先给剪贴板设一个快捷键".l)
-                todo(done: model.welcomeTried.contains("capture"),
-                     text: captureKey.isSet ? String(format: "按 %@ 截一张图".l, captureKey.display) : "先给截图设一个快捷键".l)
-                todo(done: model.welcomeTried.contains("copy"), text: "复制一段文本".l)
-                todo(done: model.welcomeTried.contains("pin"), text: "将一个卡片 Pin 起来".l, pin: true)
-                todo(done: model.welcomeTried.contains("desktop"), text: "把一张卡片向上拖出面板，贴到桌面上".l)
-                todo(done: false, text: "点击「开始使用」，卡片消失".l)
-                Spacer(minLength: 0)
-            }
-            .fixedSize(horizontal: true, vertical: false)
-            }
-            .fixedSize()
-            Spacer(minLength: 0)
-            }
-            Spacer(minLength: 10)
-            }
-            .frame(minHeight: geo.size.height)     // spacers centre the block when it fits; it scrolls when it does not
-            .padding(.horizontal, 18)
-            }
-            }
-            .frame(maxHeight: .infinity)          // whatever is left between the title rule and the tear line
+            .frame(maxHeight: .infinity)
 
             ticketRule.padding(.vertical, 4)
                 .layoutPriority(1)
@@ -94,8 +74,8 @@ struct WelcomeCard: View {
         .frame(width: Self.width)
         .frame(maxHeight: .infinity, alignment: .top)
         .background(
-            RoundedRectangle(cornerRadius: 6).fill(Paint.paper)
-                .shadow(color: .black.opacity(0.4), radius: 9, x: 2, y: 6)
+            RoundedRectangle(cornerRadius: 10).fill(Paint.paper)
+                .shadow(color: .black.opacity(0.2), radius: 7, x: 1, y: 4)
         )
         .overlay(alignment: .top) {
             if let img = Theme.pushpin {
@@ -139,7 +119,7 @@ struct WelcomeCard: View {
                 .font(.system(size: 14, weight: .light))
                 .foregroundStyle(done ? Color.paperBlueDeep.opacity(0.6) : Color.ink.opacity(0.5))
                 .frame(width: 20)
-            Text(text).font(.serif(14)).foregroundStyle(done ? Color.ink.opacity(0.35) : Color.ink)
+            Text(text).font(.serif(14)).fixedSize(horizontal: false, vertical: true).foregroundStyle(done ? Color.ink.opacity(0.35) : Color.ink)
                 .overlay { if done { Rectangle().fill(Color.ink.opacity(0.35)).frame(height: 1) } }   // centred on the glyphs, not the descender line
             if pin {
                 // The same torn blue patch a pinned card wears in its action row.

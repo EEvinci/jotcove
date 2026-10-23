@@ -114,7 +114,10 @@ PASTORY_LANG=en …                                        # 任何渲染类自�
 
 ## 视觉
 
-纸感：深棕桌面（`Theme.drawGround` / `drawDesk`）+ 米色纸片（`Theme.drawPaper`），当前剪贴板那张卡和选中态是浅蓝纸，按钮统一 `Theme.paperButton`，没有警告色。正文宋体，标题和「Pastory」字样手写体（Caveat；品牌字 Ysabeau Office 只用于「Pastory」）。标注调色盘 = 紫 + #E9631A / #C56F8C / #A9C2E0 / #59382C / #1E151C / #EBEBDF。标注线条是手绘感（路径打平后加低频噪声画两遍，固定 seed，预览与导出一致）。当前视觉资源位于 Resources；产品名称暂保留 Pastory，后续新设计的入口见 redev-docs 中的改造记录。
+纸感：可可棕桌面（#4B382F）+ 米灰纸片（#F0ECE4），当前剪贴板卡片和导航选中态使用雾霾蓝（#BDCDD5）。文字为深棕墨色；紫、黄、浅绿和薄荷绿用于卡片类型标记、复制状态与小面积点缀。纹理与阴影保持轻量。颜色统一由 `App/Theme.swift` 提供。
+
+人物素材位于 `Resources/Identity/`，由 `build.sh` 随包复制：侧栏使用用户提供的棕衣卡通人物，欢迎卡、空状态、设置页使用头像；不从网络加载。正文宋体，标题和「Pastory」字样手写体 Caveat。标注画笔原有颜色保持不变，首个紫色采用雾霾紫。品牌形象与配色变更见 `redev-docs/PERSONAL-STYLE.md`。
+
 
 ## 已知边界
 

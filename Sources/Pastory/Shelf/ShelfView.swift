@@ -5,6 +5,10 @@ extension Color {
     static let brownDeep = Color(nsColor: Theme.brownDeep)
     static let paper = Color(nsColor: Theme.paper)
     static let paperDim = Color(nsColor: Theme.paperDim)
+    static let lavender = Color(nsColor: Theme.lavender)
+    static let butter = Color(nsColor: Theme.butter)
+    static let mint = Color(nsColor: Theme.mint)
+    static let sage = Color(nsColor: Theme.sage)
     static let paperBlue = Color(nsColor: Theme.paperBlue)
     static let paperBlueDeep = Color(nsColor: Theme.paperBlueDeep)
     static let ink = Color(nsColor: Theme.ink)
@@ -68,12 +72,31 @@ struct ShelfView: View {
 
     private var sidebar: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Text("Pastory").font(.script(42)).foregroundStyle(Color.onBrown)
-                .padding(.leading, 22).padding(.top, 10).padding(.bottom, 22)
+            VStack(alignment: .leading, spacing: 0) {
+                Text("Pastory").font(.script(40)).foregroundStyle(Color.onBrown)
+                Text("EVINCI’S EDITION").font(.system(size: 8, weight: .medium, design: .monospaced))
+                    .tracking(1.4).foregroundStyle(Color.onBrownMuted)
+            }
+            .padding(.leading, 22).padding(.top, 10).padding(.bottom, 18)
             navRow(icon: "clipboard", "剪贴板".l, active: !model.showSettings) { model.showSettings = false }
             navRow(icon: "gearshape", "设置".l, active: model.showSettings) { model.showSettings = true }
-            Spacer()
-            Color.clear.frame(height: 18)
+            Spacer(minLength: 8)
+            VStack(spacing: 3) {
+                if let character = Theme.character {
+                    Image(nsImage: character).resizable().interpolation(.high).scaledToFit()
+                        .frame(maxHeight: 154)
+                        .accessibilityHidden(true)
+                }
+                Text("灵感，留在手边。".l).font(.serif(12)).foregroundStyle(Color.onBrown)
+                HStack(spacing: 5) {
+                    ForEach(0..<5) { i in
+                        Circle().fill([Color.paperBlue, .lavender, .butter, .sage, .mint][i]).frame(width: 5, height: 5)
+                    }
+                }
+                .padding(.top, 5)
+            }
+            .frame(maxWidth: .infinity)
+            .padding(.horizontal, 18).padding(.bottom, 18)
         }
         .frame(width: 162, alignment: .leading)
         .background(Color.brownDeep.opacity(0.6))
@@ -152,6 +175,7 @@ struct ShelfView: View {
                 }
             }
             .padding(.horizontal, 14).frame(width: 400, height: 40)
+            .background(Color.onBrown.opacity(0.045), in: RoundedRectangle(cornerRadius: 8))
             .overlay(TornPaper(top: true, right: true, bottom: true, left: true, seed: 31, amplitude: 0.7, step: 6).stroke(Color.onBrown.opacity(0.45), lineWidth: 1))
             Button { ShelfPanelController.shared.hide() } label: {
                 Image(systemName: "xmark").font(.system(size: 15, weight: .regular)).foregroundStyle(Color.onBrown).frame(width: 40, height: 40)
@@ -206,8 +230,13 @@ struct ShelfView: View {
             if model.isSearching {
                 ProgressView().controlSize(.small)
             } else {
-                Image(systemName: model.query.isEmpty ? "clipboard" : "magnifyingglass")
-                    .font(.system(size: 34, weight: .light)).foregroundStyle(Color.onBrownMuted.opacity(0.7))
+                if model.query.isEmpty {
+                    IdentityPortrait(size: 72)
+                    Text("灵感，留在手边。".l).font(.script(24)).foregroundStyle(Color.onBrown)
+                } else {
+                    Image(systemName: "magnifyingglass")
+                        .font(.system(size: 34, weight: .light)).foregroundStyle(Color.onBrownMuted)
+                }
             }
             Text(model.isSearching ? "正在搜索…".l : model.query.isEmpty
                  ? String(format: "还没有内容。复制点什么，或者按 %@ 截个图。".l, Preferences.shared.shortcut(Preferences.Key.hotkeyCapture).display)

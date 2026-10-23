@@ -32,6 +32,7 @@ mkdir -p "$APP/Contents/MacOS" "$APP/Contents/Resources"
 cp "$BIN" "$APP/Contents/MacOS/Pastory"
 cp Resources/Info.plist "$APP/Contents/Info.plist"
 [ -d Resources/Fonts ] && cp -R Resources/Fonts "$APP/Contents/Resources/Fonts"
+[ -d Resources/Identity ] && cp -R Resources/Identity "$APP/Contents/Resources/Identity"
 cp LICENSE "$APP/Contents/Resources/LICENSE"
 for f in AppIcon.icns Logo.png Pushpin.png MenuIcon.png MenuIcon@2x.png; do
     [ -f "Resources/$f" ] && cp "Resources/$f" "$APP/Contents/Resources/$f"
