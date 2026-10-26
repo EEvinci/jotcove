@@ -1,0 +1,93 @@
+import AppKit
+import CoreGraphics
+
+enum Permissions {
+    static var hasScreenRecording: Bool { CGPreflightScreenCaptureAccess() }
+    /// The system's own dialog is shown at most once per launch; after that it is our alert, which can relaunch.
+    private static var askedSystemThisLaunch = false
+
+    @discardableResult
+    static func requestScreenRecording() -> Bool {
+        if CGPreflightScreenCaptureAccess() { return true }
+        guard !askedSystemThisLaunch else { return false }
+        askedSystemThisLaunch = true
+        return CGRequestScreenCaptureAccess()
+    }
+
+    // MARK: Accessibility (only for the optional "paste into the front app" step)
+
+    static var hasAccessibility: Bool { AXIsProcessTrusted() }
+    private static var askedAccessibilityThisLaunch = false
+
+    /// Ask once per launch via the system prompt (which opens Settings); afterwards just report the state.
+    @discardableResult
+    static func requestAccessibility() -> Bool {
+        if AXIsProcessTrusted() { return true }
+        guard !askedAccessibilityThisLaunch else { return false }
+        askedAccessibilityThisLaunch = true
+        let opts = [kAXTrustedCheckOptionPrompt.takeUnretainedValue() as String: true] as CFDictionary
+        return AXIsProcessTrustedWithOptions(opts)
+    }
+
+    /// ⌘V into whatever is in front right now.
+    /// Posted at session level, not HID level: HID-level events feed the system's physical-keyboard
+    /// state, and interleaving with real key presses once left Command latched down machine-wide
+    /// (2026-09-17, cleared only by a reboot). Session level reaches apps without that bookkeeping.
+    /// Also waits for the user's own modifiers to lift first, so the synthetic ⌘ never overlaps a real one.
+    static func sendPaste(retries: Int = 12) {
+        let held: CGEventFlags = [.maskCommand, .maskShift, .maskAlternate, .maskControl]
+        if !CGEventSource.flagsState(.combinedSessionState).intersection(held).isEmpty {
+            if retries > 0 {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) { sendPaste(retries: retries - 1) }
+            }
+            return
+        }
+        guard let src = CGEventSource(stateID: .combinedSessionState) else { return }
+        // While the synthetic keystroke is in flight, hold back real keyboard events so nothing interleaves with it.
+        src.setLocalEventsFilterDuringSuppressionState([.permitLocalMouseEvents, .permitSystemDefinedEvents],
+                                                       state: .eventSuppressionStateSuppressionInterval)
+        let v: CGKeyCode = 9      // kVK_ANSI_V
+        let down = CGEvent(keyboardEventSource: src, virtualKey: v, keyDown: true)
+        let up = CGEvent(keyboardEventSource: src, virtualKey: v, keyDown: false)
+        down?.flags = .maskCommand
+        up?.flags = .maskCommand
+        down?.post(tap: .cgSessionEventTap)
+        up?.post(tap: .cgSessionEventTap)
+    }
+
+    static func openSettings(_ pane: String) {
+        NSWorkspace.shared.open(URL(string: "x-apple.systempreferences:com.apple.preference.security?\(pane)")!)
+    }
+
+    /// Gate before every screenshot. A grant made while we are running only takes effect after a relaunch,
+    /// so the alert offers exactly that instead of sending people back to Settings again and again.
+    @MainActor
+    static func ensureScreenRecording() -> Bool {
+        if hasScreenRecording { return true }
+        _ = requestScreenRecording()
+        if hasScreenRecording { return true }
+        let alert = NSAlert()
+        alert.messageText = "笺湾还没有屏幕录制权限".l
+        alert.informativeText = "在「系统设置 › 隐私与安全性 › 屏幕录制」里打开 JotCove。已经打开了的话，权限要重新启动后才生效。".l
+        alert.addButton(withTitle: "我已打开，重新启动笺湾".l)
+        alert.addButton(withTitle: "打开系统设置".l)
+        alert.addButton(withTitle: "取消".l)
+        NSApp.activate(ignoringOtherApps: true)
+        switch alert.runModal() {
+        case .alertFirstButtonReturn: relaunch()
+        case .alertSecondButtonReturn: openSettings("Privacy_ScreenCapture")
+        default: break
+        }
+        return false
+    }
+
+    /// Start a fresh copy of ourselves, then quit this one.
+    @MainActor
+    static func relaunch() {
+        let cfg = NSWorkspace.OpenConfiguration()
+        cfg.createsNewApplicationInstance = true
+        NSWorkspace.shared.openApplication(at: Bundle.main.bundleURL, configuration: cfg) { _, error in
+            if error == nil { DispatchQueue.main.async { NSApp.terminate(nil) } }      // if the new copy did not start, stay alive
+        }
+    }
+}

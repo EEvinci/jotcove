@@ -9,5 +9,5 @@ if [ -n "$NOTES" ] && [ ! -f "$NOTES" ]; then
     exit 2
 fi
 ./dist.sh
-if [ -n "$NOTES" ]; then cp "$NOTES" "dist/Pastory-$VERSION-notes.md"; fi
+if [ -n "$NOTES" ]; then cp "$NOTES" "dist/JotCove-$VERSION-notes.md"; fi
 echo "Local release prepared in dist/."

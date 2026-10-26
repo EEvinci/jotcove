@@ -1,12 +1,12 @@
-<p align="center"><img src="Resources/Logo.png" width="88" alt="Pastory"></p>
-<h1 align="center">Pastory</h1>
-<p align="center"><strong>让剪贴板有记忆，让灵感留在手边。</strong></p>
+<p align="center"><img src="Resources/Logo.png" width="88" alt="JotCove"></p>
+<h1 align="center">笺湾 · JotCove</h1>
+<p align="center"><strong>散落的灵感，在这里靠岸。</strong></p>
 <p align="center">Evinci 开发与维护 · macOS 原生剪贴板、截图与录屏工具</p>
-<p align="center"><a href="https://github.com/EEvinci/pastory/releases/latest">下载安装包</a> · <a href="docs/ARCHITECTURE.md">看懂软件架构</a> · <a href="README.en.md">English</a></p>
+<p align="center"><a href="https://github.com/EEvinci/jotcove/releases/latest">下载安装包</a> · <a href="docs/ARCHITECTURE.md">看懂软件架构</a> · <a href="README.en.md">English</a></p>
 
-<p align="center"><img src="docs/images/hero-zh.png" alt="Pastory 的纸感卡片界面：可可棕侧栏、雾霾蓝选中卡片与米灰历史卡片" width="100%"></p>
+<p align="center"><img src="docs/images/hero-zh.png" alt="JotCove 的纸感卡片界面：可可棕侧栏、雾霾蓝选中卡片与米灰历史卡片" width="100%"></p>
 
-普通剪贴板只记得最后一次复制。Pastory 把之前复制的文字、链接、图片、文件和录屏整理成卡片，随时搜索、收藏、编辑和再次使用。
+普通剪贴板只记得最后一次复制。笺湾把之前复制的文字、链接、图片、文件和录屏整理成卡片，随时搜索、收藏、编辑和再次使用。
 
 复制过的常用回复、Prompt、地址、参考截图，都可以在一个面板里找到。可可棕、雾霾蓝与米灰的纸感界面，搭配 Evinci 的人物 IP，让每天使用的工具也有自己的温度。
 
@@ -14,13 +14,13 @@
 
 | 项目 | 说明 |
 | --- | --- |
-| 最新发布 | [v1.1.0 发布说明与下载](https://github.com/EEvinci/pastory/releases/tag/v1.1.0) |
-| 安装包 | [Pastory-1.1.0.zip](https://github.com/EEvinci/pastory/releases/download/v1.1.0/Pastory-1.1.0.zip) |
+| 最新发布 | [v1.2.0 发布说明与下载](https://github.com/EEvinci/jotcove/releases/tag/v1.2.0) |
+| 安装包 | [JotCove-1.2.0.zip](https://github.com/EEvinci/jotcove/releases/download/v1.2.0/JotCove-1.2.0.zip) |
 | 系统 | macOS 15 或更新版本 |
 | 处理器 | 同一个安装包支持 Apple 芯片与 Intel |
 | 签名 | 本地 ad-hoc 签名，**未经 Apple 公证** |
 
-1. 下载 ZIP 并解压，将 `Pastory.app` 拖入「应用程序」。升级时先退出旧版。
+1. 下载 ZIP 并解压，将 `JotCove.app` 拖入「应用程序」。升级时先退出旧版。
 2. 打开应用。它常驻菜单栏；点击菜单栏的图标，或按 **⇧⌘V** 打开剪贴板面板。
 3. 如系统提示无法验证开发者或阻止打开，按安装包内的 `FIRST-LAUNCH.txt`（首次打开说明），在「系统设置 → 隐私与安全性」中允许打开。
 4. 第一次使用截图/录屏时授予**屏幕录制**权限，按提示重新启动应用。
@@ -49,6 +49,10 @@
 | 截图 / 录屏 | ⌥⌘S |
 | 搜索剪贴板 | ⌥⌘F |
 
+## 从旧版升级
+
+笺湾是本项目的新名字，安装后应用名为 `JotCove.app`。从旧版升级时先退出旧应用，再打开新版。历史目录和应用内部标识沿用原值，因此已有内容和设置无需重新导入；系统权限若提示重新授权，按提示处理。旧版不要与新版同时运行。
+
 ## 数据放在哪里
 
 核心功能在本机完成：无需账号，没有远端业务服务器、云同步、在线更新检查或剪贴板上传。图片文字识别使用 Apple Vision 在设备上处理。
@@ -71,7 +75,7 @@ flowchart LR
 
 这是 Swift 编写的原生 Mac 应用。AppKit 处理窗口、菜单栏与系统交互，SwiftUI 展示卡片和设置；SQLite 记录目录信息，本地文件保存实际内容。截图、录屏和识字分别使用 ScreenCaptureKit、AVFoundation 和 Vision。
 
-**不懂代码也能读：** [Pastory 是怎样工作的](docs/ARCHITECTURE.md)，包含生活化解释、流程图，以及可以直接对外讲的 15 秒和 1 分钟介绍。
+**不懂代码也能读：** [JotCove 是怎样工作的](docs/ARCHITECTURE.md)，包含生活化解释、流程图，以及可以直接对外讲的 15 秒和 1 分钟介绍。
 
 ## 当前边界
 
@@ -86,13 +90,13 @@ flowchart LR
 需要 Swift 6 工具链和支持 macOS 15+ SDK 的 Xcode / Command Line Tools。运行时需要 macOS 15+。
 
 ```bash
-git clone https://github.com/EEvinci/pastory.git
-cd pastory
+git clone https://github.com/EEvinci/jotcove.git
+cd jotcove
 ./build.sh
-open build/Pastory.app
+open build/JotCove.app
 ```
 
-在 Xcode 中打开 **`Pastory.xcodeproj`**，选择 **Pastory → My Mac**，按 **⌘R**。它会生成包含真实应用标识、字体与人物素材的完整 `.app`。直接运行 `Package.swift` 的 executable target 不会执行 App 打包步骤，不作为日常界面调试入口。
+在 Xcode 中打开 **`JotCove.xcodeproj`**，选择 **JotCove → My Mac**，按 **⌘R**。它会生成包含真实应用标识、字体与人物素材的完整 `.app`。直接运行 `Package.swift` 的 executable target 不会执行 App 打包步骤，不作为日常界面调试入口。
 
 ```bash
 ./dist.sh                 # 生成 Intel + Apple 芯片通用包、首次打开说明与校验文件
@@ -101,9 +105,13 @@ open build/Pastory.app
 
 正式签名与公证可显式配置自己的 `SIGN_ID`、`NOTARY_PROFILE`。开发约定见 [DEVELOPMENT.md](docs/DEVELOPMENT.md)。
 
+## 品牌与版本
+
+[名字与图标设计说明](docs/BRAND.md) · [v1.2.0 更新说明](docs/releases/v1.2.0.md)
+
 ## 版本与许可
 
-[GitHub Releases](https://github.com/EEvinci/pastory/releases) 提供安装包、发布说明与 SHA-256 校验文件。升级通过手动下载替换应用完成。
+[GitHub Releases](https://github.com/EEvinci/jotcove/releases) 提供安装包、发布说明与 SHA-256 校验文件。升级通过手动下载替换应用完成。
 
 最初源码备份保存在 `backup/pre-style-2026-10-23` 标签，后续发布不会覆盖该标签。
 

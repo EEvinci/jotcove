@@ -1,12 +1,12 @@
-# Pastory 是怎样工作的
+# JotCove 是怎样工作的
 
 这份说明面向不写代码的人，也可以作为介绍产品时的讲稿。内容按当前源码核对。
 
 ## 一句话讲清楚
 
-**Pastory 是一个在 Mac 本机工作的收纳助手：把复制过的东西收进卡片，需要时搜出来、点一下就能再次使用；截图、标注和录屏也放进同一个工作空间。**
+**JotCove 是一个在 Mac 本机工作的收纳助手：把复制过的东西收进卡片，需要时搜出来、点一下就能再次使用；截图、标注和录屏也放进同一个工作空间。**
 
-普通剪贴板像一张随时被覆盖的便利贴，只保留最后一次复制。Pastory 在旁边准备了一个有目录的收纳柜，帮你保留之前的内容。
+普通剪贴板像一张随时被覆盖的便利贴，只保留最后一次复制。JotCove 在旁边准备了一个有目录的收纳柜，帮你保留之前的内容。
 
 ## 它由五个部分组成
 
@@ -57,7 +57,7 @@ flowchart TD
 当前数据目录是 `~/Library/Application Support/Pastory/`：
 
 ```text
-Pastory/
+JotCove/
 ├── pastory.sqlite       目录：类型、时间、来源、标题、Pin 等
 ├── items/               正文、图片、视频和文件路径列表
 ├── thumbs/              用来快速显示卡片的缩略图
@@ -68,7 +68,7 @@ Pastory/
 
 **文件条目保存的是原文件路径，不会把 Finder 中复制的所有文件再备份一份。** 移动或删除原文件后，这类卡片可能失效。截图、录屏等由应用保存的内容则有自己的本地文件。
 
-备份数据时，先退出 Pastory，再复制整个数据目录；SQLite 可能还带有 `-wal`、`-shm` 伴随文件，不应只在运行中拷贝一个数据库文件。
+备份数据时，先退出 JotCove，再复制整个数据目录；SQLite 可能还带有 `-wal`、`-shm` 伴随文件，不应只在运行中拷贝一个数据库文件。
 
 ## 搜索为什么不会每输入一个字就卡住
 
@@ -103,7 +103,7 @@ Pastory/
 → 进入本地历史并复制结果
 ```
 
-macOS 的 ScreenCaptureKit 负责提供画面，AVFoundation 负责视频写入和编码；Pastory 负责选区、录制状态、计时、控制条、异常处理、预览和保存。
+macOS 的 ScreenCaptureKit 负责提供画面，AVFoundation 负责视频写入和编码；JotCove 负责选区、录制状态、计时、控制条、异常处理、预览和保存。
 
 当前目标帧率为 30 fps，录制时长上限约 10 分钟，**暂不录制系统声音和麦克风声音**。GIF 是录制后再转换出来的。
 
@@ -130,7 +130,7 @@ macOS 的 ScreenCaptureKit 负责提供画面，AVFoundation 负责视频写入�
 - **可执行程序**是能够工作的核心机器。
 - **`.app` 应用包**是把机器、身份信息、图标、字体和人物素材装在一起的完整产品。
 
-直接运行 `Package.swift` 的 executable target，相当于把核心机器单独拿出来，系统未必读得到应用包里的身份和资源。日常 Xcode 调试应打开 `Pastory.xcodeproj`；`build.sh` 也会把命令行构建结果组装成完整的 `Pastory.app`。
+直接运行 `Package.swift` 的 executable target，相当于把核心机器单独拿出来，系统未必读得到应用包里的身份和资源。日常 Xcode 调试应打开 `JotCove.xcodeproj`；`build.sh` 也会把命令行构建结果组装成完整的 `JotCove.app`。
 
 软件是菜单栏工具，不是每次启动都弹出主窗口。欢迎引导完成后，可点击菜单栏图标或按 ⇧⌘V 打开卡片面板。
 
@@ -145,24 +145,24 @@ macOS 的 ScreenCaptureKit 负责提供画面，AVFoundation 负责视频写入�
 
 **15 秒版**
 
-> Pastory 是我开发和维护的 Mac 效率工具。它把复制、截图和录屏收进一个本地卡片空间，需要时搜出来就能再次使用，减少反复翻找和重复操作。
+> JotCove 是我开发和维护的 Mac 效率工具。它把复制、截图和录屏收进一个本地卡片空间，需要时搜出来就能再次使用，减少反复翻找和重复操作。
 
 **1 分钟版**
 
-> 可以把 Pastory 理解成电脑上的自动收纳助手。普通剪贴板只记得最后一次复制，它会把之前的文字、链接、图片和录屏整理成卡片，还能收藏、搜索、编辑和贴到桌面。它是原生 Mac 应用，使用系统提供的截图、视频和识字能力，历史内容保存在自己的电脑里，不需要账号或服务器。界面用棕色、雾霾蓝和米灰营造纸张与文具的感觉，让一个日常工具也带有我的个人风格。
+> 可以把 JotCove 理解成电脑上的自动收纳助手。普通剪贴板只记得最后一次复制，它会把之前的文字、链接、图片和录屏整理成卡片，还能收藏、搜索、编辑和贴到桌面。它是原生 Mac 应用，使用系统提供的截图、视频和识字能力，历史内容保存在自己的电脑里，不需要账号或服务器。界面用棕色、雾霾蓝和米灰营造纸张与文具的感觉，让一个日常工具也带有我的个人风格。
 
 ## 想进一步看代码时
 
 | 要理解的问题 | 对应源码 |
 | --- | --- |
-| 应用如何启动、挂在菜单栏 | [AppDelegate.swift](../Sources/Pastory/App/AppDelegate.swift) |
-| 如何发现复制、过滤内容 | [ClipboardMonitor.swift](../Sources/Pastory/Clipboard/ClipboardMonitor.swift) |
-| 如何去重和保存内容 | [ClipStore.swift](../Sources/Pastory/Clipboard/ClipStore.swift)、[ClipDB.swift](../Sources/Pastory/Clipboard/ClipDB.swift) |
-| 如何搜索、更新卡片选择 | [ClipSearchIndex.swift](../Sources/Pastory/Clipboard/ClipSearchIndex.swift)、[ShelfPanel.swift](../Sources/Pastory/Shelf/ShelfPanel.swift) |
-| 如何截图和组织选区 | [CaptureCoordinator.swift](../Sources/Pastory/Capture/CaptureCoordinator.swift) |
-| 如何画标注 | [AnnotationRenderer.swift](../Sources/Pastory/Annotate/AnnotationRenderer.swift) |
-| 如何识字和录屏 | [OCR.swift](../Sources/Pastory/Annotate/OCR.swift)、[ScreenRecorder.swift](../Sources/Pastory/Capture/ScreenRecorder.swift) |
-| 如何实现桌面便签 | [DesktopNotes.swift](../Sources/Pastory/Shelf/DesktopNotes.swift) |
-| 如何决定清理哪些内容 | [Retention.swift](../Sources/Pastory/Clipboard/Retention.swift) |
+| 应用如何启动、挂在菜单栏 | [AppDelegate.swift](../Sources/JotCove/App/AppDelegate.swift) |
+| 如何发现复制、过滤内容 | [ClipboardMonitor.swift](../Sources/JotCove/Clipboard/ClipboardMonitor.swift) |
+| 如何去重和保存内容 | [ClipStore.swift](../Sources/JotCove/Clipboard/ClipStore.swift)、[ClipDB.swift](../Sources/JotCove/Clipboard/ClipDB.swift) |
+| 如何搜索、更新卡片选择 | [ClipSearchIndex.swift](../Sources/JotCove/Clipboard/ClipSearchIndex.swift)、[ShelfPanel.swift](../Sources/JotCove/Shelf/ShelfPanel.swift) |
+| 如何截图和组织选区 | [CaptureCoordinator.swift](../Sources/JotCove/Capture/CaptureCoordinator.swift) |
+| 如何画标注 | [AnnotationRenderer.swift](../Sources/JotCove/Annotate/AnnotationRenderer.swift) |
+| 如何识字和录屏 | [OCR.swift](../Sources/JotCove/Annotate/OCR.swift)、[ScreenRecorder.swift](../Sources/JotCove/Capture/ScreenRecorder.swift) |
+| 如何实现桌面便签 | [DesktopNotes.swift](../Sources/JotCove/Shelf/DesktopNotes.swift) |
+| 如何决定清理哪些内容 | [Retention.swift](../Sources/JotCove/Clipboard/Retention.swift) |
 
 更细的开发约定见 [DEVELOPMENT.md](DEVELOPMENT.md)。软件包含的开源代码、字体与贡献说明见 [第三方说明](../THIRD_PARTY_NOTICES.md) 和 [LICENSE](../LICENSE)。

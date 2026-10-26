@@ -2,7 +2,10 @@
 build/
 dist/
 .DS_Store
-Pastory.xcodeproj/xcuserdata/
-Pastory.xcodeproj/project.xcworkspace/xcuserdata/
+JotCove.xcodeproj/xcuserdata/
+JotCove.xcodeproj/project.xcworkspace/xcuserdata/
 
 .swiftpm/
+
+**/xcuserdata/
+*.xcuserstate

@@ -2,12 +2,12 @@
 import PackageDescription
 
 let package = Package(
-    name: "Pastory",
+    name: "JotCove",
     platforms: [.macOS(.v15)],
     targets: [
         .executableTarget(
-            name: "Pastory",
-            path: "Sources/Pastory",
+            name: "JotCove",
+            path: "Sources/JotCove",
             swiftSettings: [.swiftLanguageMode(.v5)],
             linkerSettings: [.linkedLibrary("sqlite3")]
         )

@@ -1,0 +1,326 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {};
+	objectVersion = 77;
+	objects = {
+		A1092785CCF615A95C4086C3 = {
+			isa = PBXFileReference;
+			lastKnownFileType = "image.icns";
+			path = "Resources/AppIcon.icns";
+			sourceTree = SOURCE_ROOT;
+		};
+		C21D10585026AD4117C4C7B7 = {
+			isa = PBXBuildFile;
+			fileRef = A1092785CCF615A95C4086C3;
+		};
+		64B61E74194C730CB032D5E7 = {
+			isa = PBXFileReference;
+			lastKnownFileType = "image.png";
+			path = "Resources/Logo.png";
+			sourceTree = SOURCE_ROOT;
+		};
+		5DF168210668694F5516FED6 = {
+			isa = PBXBuildFile;
+			fileRef = 64B61E74194C730CB032D5E7;
+		};
+		E482C846B87ECF83838E9C0F = {
+			isa = PBXFileReference;
+			lastKnownFileType = "image.png";
+			path = "Resources/Pushpin.png";
+			sourceTree = SOURCE_ROOT;
+		};
+		2A4BD8EA631D15714DBC2692 = {
+			isa = PBXBuildFile;
+			fileRef = E482C846B87ECF83838E9C0F;
+		};
+		38889A92E3559E86C0056C49 = {
+			isa = PBXFileReference;
+			lastKnownFileType = "image.png";
+			path = "Resources/MenuIcon.png";
+			sourceTree = SOURCE_ROOT;
+		};
+		2F97AEA5057BD8F6CEF2085C = {
+			isa = PBXBuildFile;
+			fileRef = 38889A92E3559E86C0056C49;
+		};
+		400C32AC18B311459157EEDE = {
+			isa = PBXFileReference;
+			lastKnownFileType = "image.png";
+			path = "Resources/MenuIcon@2x.png";
+			sourceTree = SOURCE_ROOT;
+		};
+		50BBE57393CED4904AD01CA9 = {
+			isa = PBXBuildFile;
+			fileRef = 400C32AC18B311459157EEDE;
+		};
+		30A3A33BB36515AF056CE63A = {
+			isa = PBXFileReference;
+			lastKnownFileType = "folder";
+			path = "Resources/Fonts";
+			sourceTree = SOURCE_ROOT;
+		};
+		4C70FF5F059B847937D5B46A = {
+			isa = PBXBuildFile;
+			fileRef = 30A3A33BB36515AF056CE63A;
+		};
+		E4E90A56827D2489503528EA = {
+			isa = PBXFileReference;
+			lastKnownFileType = "folder";
+			path = "Resources/Identity";
+			sourceTree = SOURCE_ROOT;
+		};
+		A568642065E00AEEBDC16A33 = {
+			isa = PBXBuildFile;
+			fileRef = E4E90A56827D2489503528EA;
+		};
+		27F69FD8D56350A641CD2715 = {
+			isa = PBXFileReference;
+			lastKnownFileType = "text";
+			path = "LICENSE";
+			sourceTree = SOURCE_ROOT;
+		};
+		F1B7CF362F48DD3A838993CB = {
+			isa = PBXBuildFile;
+			fileRef = 27F69FD8D56350A641CD2715;
+		};
+		C954F4C30BB7A834C18515BC = {
+			isa = PBXFileReference;
+			lastKnownFileType = "net.daringfireball.markdown";
+			path = "THIRD_PARTY_NOTICES.md";
+			sourceTree = SOURCE_ROOT;
+		};
+		D15C8C4F835DADC44DE39255 = {
+			isa = PBXBuildFile;
+			fileRef = C954F4C30BB7A834C18515BC;
+		};
+		36DB2277BD9D49B66E2B34C2 = {
+			isa = PBXFileReference;
+			lastKnownFileType = "text.plist.xml";
+			path = "Resources/Info.plist";
+			sourceTree = SOURCE_ROOT;
+		};
+		A1ED338E36B8610B6444482B = {
+			isa = PBXFileReference;
+			lastKnownFileType = "text.plist.entitlements";
+			path = "Resources/JotCove.entitlements";
+			sourceTree = SOURCE_ROOT;
+		};
+		9246575CB832C24F8516C0D8 = {
+			isa = PBXFileReference;
+			lastKnownFileType = "sourcecode.swift";
+			path = "Package.swift";
+			sourceTree = SOURCE_ROOT;
+		};
+		C0364535042BCB5BFD57F3E4 = {
+			isa = PBXFileReference;
+			lastKnownFileType = "net.daringfireball.markdown";
+			path = "README.md";
+			sourceTree = SOURCE_ROOT;
+		};
+		8D8A1885BAF9D285FEEF5D51 = {
+			isa = PBXFileReference;
+			lastKnownFileType = "folder";
+			path = "redev-docs";
+			sourceTree = SOURCE_ROOT;
+		};
+		21BD0ABA0D4F6F39374E2521 = {
+			isa = PBXFileReference;
+			explicitFileType = wrapper.application;
+			includeInIndex = 0;
+			path = JotCove.app;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DD9D21D1E326828C6D8DD858 = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Sources/JotCove;
+			sourceTree = "<group>";
+		};
+		8B2B80D5F892864F012E35D3 = {
+			isa = PBXGroup;
+			children = (
+				A1092785CCF615A95C4086C3,
+				64B61E74194C730CB032D5E7,
+				E482C846B87ECF83838E9C0F,
+				38889A92E3559E86C0056C49,
+				400C32AC18B311459157EEDE,
+				30A3A33BB36515AF056CE63A,
+				E4E90A56827D2489503528EA,
+				27F69FD8D56350A641CD2715,
+				C954F4C30BB7A834C18515BC,
+				36DB2277BD9D49B66E2B34C2,
+				A1ED338E36B8610B6444482B,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		ABC1710D7E93BCAE2EED7805 = {
+			isa = PBXGroup;
+			children = (
+				21BD0ABA0D4F6F39374E2521,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		241128456986DEF66DA27889 = {
+			isa = PBXGroup;
+			children = (
+				DD9D21D1E326828C6D8DD858,
+				8B2B80D5F892864F012E35D3,
+				9246575CB832C24F8516C0D8,
+				C0364535042BCB5BFD57F3E4,
+				8D8A1885BAF9D285FEEF5D51,
+				ABC1710D7E93BCAE2EED7805,
+			);
+			sourceTree = "<group>";
+		};
+		DBCCF4F8F875EE07147FD15E = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		040A277ADB236D993684F6B1 = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5806F5B76B706CB086F161CF = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C21D10585026AD4117C4C7B7,
+				5DF168210668694F5516FED6,
+				2A4BD8EA631D15714DBC2692,
+				2F97AEA5057BD8F6CEF2085C,
+				50BBE57393CED4904AD01CA9,
+				4C70FF5F059B847937D5B46A,
+				A568642065E00AEEBDC16A33,
+				F1B7CF362F48DD3A838993CB,
+				D15C8C4F835DADC44DE39255,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		473F3FA85819C59DA9D8B037 = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = "YES";
+				CLANG_ENABLE_OBJC_ARC = "YES";
+				DEBUG_INFORMATION_FORMAT = "dwarf";
+				ENABLE_TESTABILITY = "YES";
+				ENABLE_USER_SCRIPT_SANDBOXING = "YES";
+				MACOSX_DEPLOYMENT_TARGET = "15.0";
+				ONLY_ACTIVE_ARCH = "YES";
+				SDKROOT = "macosx";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = "5.0";
+			};
+			name = Debug;
+		};
+		B55E870BD3E108C8949C4BBC = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = "YES";
+				CLANG_ENABLE_OBJC_ARC = "YES";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_USER_SCRIPT_SANDBOXING = "YES";
+				MACOSX_DEPLOYMENT_TARGET = "15.0";
+				SDKROOT = "macosx";
+				SWIFT_COMPILATION_MODE = "wholemodule";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = "5.0";
+			};
+			name = Release;
+		};
+		86CF0BD16D049957F772A764 = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				473F3FA85819C59DA9D8B037,
+				B55E870BD3E108C8949C4BBC,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB59AB0C4DC8ABEC07BB743D = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Resources/JotCove.entitlements";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = "Manual";
+				ENABLE_APP_SANDBOX = "NO";
+				GENERATE_INFOPLIST_FILE = "NO";
+				INFOPLIST_FILE = "Resources/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/../Frameworks");
+				OTHER_LDFLAGS = ("$(inherited)", "-lsqlite3");
+				PRODUCT_BUNDLE_IDENTIFIER = "local.pastory.app";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DBCEA934BDCEB7ED64A53302 = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Resources/JotCove.entitlements";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = "Manual";
+				ENABLE_APP_SANDBOX = "NO";
+				GENERATE_INFOPLIST_FILE = "NO";
+				INFOPLIST_FILE = "Resources/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/../Frameworks");
+				OTHER_LDFLAGS = ("$(inherited)", "-lsqlite3");
+				PRODUCT_BUNDLE_IDENTIFIER = "local.pastory.app";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		E631A381AE071F7DCD660C70 = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB59AB0C4DC8ABEC07BB743D,
+				DBCEA934BDCEB7ED64A53302,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4275826533CACF77F3D61D54 = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E631A381AE071F7DCD660C70;
+			buildPhases = (
+				DBCCF4F8F875EE07147FD15E,
+				040A277ADB236D993684F6B1,
+				5806F5B76B706CB086F161CF,
+			);
+			buildRules = ();
+			dependencies = ();
+			fileSystemSynchronizedGroups = (
+				DD9D21D1E326828C6D8DD858,
+			);
+			name = JotCove;
+			productName = JotCove;
+			productReference = 21BD0ABA0D4F6F39374E2521;
+			productType = "com.apple.product-type.application";
+		};
+		E88C120EF34A87630AEBCE8A = {
+			isa = PBXProject;
+			attributes = { BuildIndependentTargetsInParallel = YES; LastUpgradeCheck = 2710; };
+			buildConfigurationList = 86CF0BD16D049957F772A764;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (en, Base);
+			mainGroup = 241128456986DEF66DA27889;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = ABC1710D7E93BCAE2EED7805;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4275826533CACF77F3D61D54,
+			);
+		};
+	};
+	rootObject = E88C120EF34A87630AEBCE8A;
+}

@@ -1,19 +1,19 @@
-# Pastory 开发约定
+# JotCove 开发约定
 
 > 给贡献者和未来的自己看的规则本。面向用户的介绍在仓库根目录的 [README.md](../README.md)（中文）/ [README.en.md](../README.en.md)。
 
-Pastory 是 macOS 15+ 的菜单栏工具：剪贴板历史面板 + 截图标注 / 识别文字 / 区域录屏。SwiftPM，AppKit + SwiftUI，只用 Apple 框架和系统 libsqlite3，没有第三方依赖。
+JotCove 是 macOS 15+ 的菜单栏工具：剪贴板历史面板 + 截图标注 / 识别文字 / 区域录屏。SwiftPM，AppKit + SwiftUI，只用 Apple 框架和系统 libsqlite3，没有第三方依赖。
 
 ## 目录
 
 ```
 Package.swift        macOS 15+，Swift 6 工具链、v5 语言模式
-Pastory.xcodeproj    Xcode 原生 macOS App target；日常调试入口，包含 Info.plist 与资源
-build.sh             swift build → build/Pastory.app → codesign（默认 ad-hoc，正式身份需显式指定）
+JotCove.xcodeproj    Xcode 原生 macOS App target；日常调试入口，包含 Info.plist 与资源
+build.sh             swift build → build/JotCove.app → codesign（默认 ad-hoc，正式身份需显式指定）
 dist.sh              universal 构建 + 本地 ZIP；显式提供自己的身份与配置后才公证
 release.sh           dist.sh → 本地分发包 + 可选说明文件，不执行远端发布
 Resources/           Info.plist、entitlements（空）、AppIcon.icns、Logo / MenuIcon / Pushpin、Fonts/（Caveat、Ysabeau Office 及各自的 OFL）
-Sources/Pastory/
+Sources/JotCove/
   App/               入口、应用身份、菜单栏、全局快捷键、权限、偏好、双语表、主题、自测
   Capture/           取屏、框选浮层、截图、区域录屏、GIF 编码、录屏预览
   Annotate/          标注画布与工具条、手绘渲染、OCR 与识别文字面板
@@ -29,10 +29,10 @@ redev-docs/           当前改造记录与改造前历史盘点（历史账号�
 
 ## 构建、分发、发布
 
-Xcode 开发打开 `Pastory.xcodeproj`，运行 `Pastory` scheme。原生工程与 SwiftPM 共用 `Sources/Pastory`；新增 Swift 文件会通过同步文件夹加入原生 target。资源需加入原生 target 的 Copy Bundle Resources；命令行脚本的资源复制清单也要同步维护。Info.plist 的 Bundle ID 应与原生 target 的 `PRODUCT_BUNDLE_IDENTIFIER` 保持一致。
+Xcode 开发打开 `JotCove.xcodeproj`，运行 `JotCove` scheme。原生工程与 SwiftPM 共用 `Sources/JotCove`；新增 Swift 文件会通过同步文件夹加入原生 target。资源需加入原生 target 的 Copy Bundle Resources；命令行脚本的资源复制清单也要同步维护。Info.plist 的 Bundle ID 应与原生 target 的 `PRODUCT_BUNDLE_IDENTIFIER` 保持一致。
 
 ```bash
-./build.sh                 # 本机架构，build/Pastory.app
+./build.sh                 # 本机架构，build/JotCove.app
 ./dist.sh                  # arm64 + x86_64，默认 ad-hoc，本地 ZIP 和首次打开说明
 ./release.sh notes.md      # 本地打包，并附带说明文件；不打 tag、不推送、不上传
 ```
@@ -77,34 +77,34 @@ SIGN_ID="Developer ID Application: YOUR NAME (YOURTEAMID)" NOTARY_PROFILE="your-
 ## 自测
 
 ```bash
-BIN="./build/Pastory.app/Contents/MacOS/Pastory"
-S=/tmp/pastory-test      # 任何会写库的自测都必须指到一个临时目录
-PASTORY_STORE=$S "$BIN" --selftest shelf <out.png>       # 离屏渲染剪贴板面板（含样例）
-PASTORY_STORE=$S "$BIN" --selftest shelfsearch <out.png> # 搜索等待态
-PASTORY_STORE=$S "$BIN" --selftest search                # 全文匹配、缓存失效、取消旧查询和选择状态
-PASTORY_STORE=$S "$BIN" --selftest settings <out.png>    # 设置页
-PASTORY_STORE=$S "$BIN" --selftest welcome <out.png>     # 欢迎卡（PASTORY_HEIGHT 试小屏）
-PASTORY_STORE=$S "$BIN" --selftest note <out.png>        # 桌面便签
-PASTORY_STORE=$S "$BIN" --selftest editors <out.png>     # 文本 / 图片编辑窗
-PASTORY_STORE=$S "$BIN" --selftest ocrpanel <out.png>    # 识别文字面板
-PASTORY_STORE=$S "$BIN" --selftest annotate <out.png>    # 标注画布 + 工具条，另存 <out>.flat.png 为合成结果
-PASTORY_STORE=$S "$BIN" --selftest annotationtext <out.png> # 文字框缩放、换行、输入法和编辑/导出排版
-PASTORY_STORE=$S "$BIN" --selftest preview <out.png>     # 录屏预览窗
-PASTORY_STORE=$S "$BIN" --selftest retention | tombstone | heic | ingest | writer | gif | ocr | l10n
-PASTORY_STORE=$S "$BIN" --selftest import <db>           # 用一个外来 SQLite 验证导入
-PASTORY_STORE=$S "$BIN" --selftest clipboard 10          # 监听 10 秒，打印记录到的条目
-PASTORY_LANG=en …                                        # 任何渲染类自测加这个变量出英文
+BIN="./build/JotCove.app/Contents/MacOS/JotCove"
+S=/tmp/jotcove-test      # 任何会写库的自测都必须指到一个临时目录
+JOTCOVE_STORE=$S "$BIN" --selftest shelf <out.png>       # 离屏渲染剪贴板面板（含样例）
+JOTCOVE_STORE=$S "$BIN" --selftest shelfsearch <out.png> # 搜索等待态
+JOTCOVE_STORE=$S "$BIN" --selftest search                # 全文匹配、缓存失效、取消旧查询和选择状态
+JOTCOVE_STORE=$S "$BIN" --selftest settings <out.png>    # 设置页
+JOTCOVE_STORE=$S "$BIN" --selftest welcome <out.png>     # 欢迎卡（JOTCOVE_HEIGHT 试小屏）
+JOTCOVE_STORE=$S "$BIN" --selftest note <out.png>        # 桌面便签
+JOTCOVE_STORE=$S "$BIN" --selftest editors <out.png>     # 文本 / 图片编辑窗
+JOTCOVE_STORE=$S "$BIN" --selftest ocrpanel <out.png>    # 识别文字面板
+JOTCOVE_STORE=$S "$BIN" --selftest annotate <out.png>    # 标注画布 + 工具条，另存 <out>.flat.png 为合成结果
+JOTCOVE_STORE=$S "$BIN" --selftest annotationtext <out.png> # 文字框缩放、换行、输入法和编辑/导出排版
+JOTCOVE_STORE=$S "$BIN" --selftest preview <out.png>     # 录屏预览窗
+JOTCOVE_STORE=$S "$BIN" --selftest retention | tombstone | heic | ingest | writer | gif | ocr | l10n
+JOTCOVE_STORE=$S "$BIN" --selftest import <db>           # 用一个外来 SQLite 验证导入
+JOTCOVE_STORE=$S "$BIN" --selftest clipboard 10          # 监听 10 秒，打印记录到的条目
+JOTCOVE_LANG=en …                                        # 任何渲染类自测加这个变量出英文
 ```
 
-- `PASTORY_STORE` / `PASTORY_LANG` 只在命令行带 `--selftest` 时生效（`App/Sandbox.swift`）；正常启动一律忽略，壳里残留的变量不会把 app 指到沙箱。
-- 会写库的子命令要求 `PASTORY_STORE` 非空且不在 `~/Library/Application Support` 之下，否则直接拒绝。新增会写库的子命令，第一件事是加进 `SelfTest.swift` 的 mutating 名单。
+- `JOTCOVE_STORE` / `JOTCOVE_LANG` 只在命令行带 `--selftest` 时生效（`App/Sandbox.swift`）；正常启动一律忽略，壳里残留的变量不会把 app 指到沙箱。
+- 会写库的子命令要求 `JOTCOVE_STORE` 非空且不在 `~/Library/Application Support` 之下，否则直接拒绝。新增会写库的子命令，第一件事是加进 `SelfTest.swift` 的 mutating 名单。
 - 改 UI 先跑对应的渲染自测看图，中英文各一张。
 - 重启 app 用单独一条命令，不要和带环境变量的自测写在同一行。
 
 ## 行为约定
 
 - **快捷键**：默认 ⌥⌘S 截图、⇧⌘V 面板、⌥⌘F 搜索，都可改。录制时当场试注册：被其他应用占用或和自己的另一个重复就拒绝；没有修饰键的单键拒绝；只有 ⌘ / ⇧ 加单键允许但提示会覆盖所有应用。
-- **桌面便签**（`Shelf/DesktopNotes.swift`、`DesktopNoteView.swift`）：把面板里的卡向上拖出面板边界即成为桌面便签（松手在面板上=取消），右键也有「贴到桌面」；便签是同一张纸卡、全文展示（文本最高屏高 60%，超出卡内滚动），底部是 编辑 / 图层 / 关闭；单击复制、双击贴进前台应用；非激活面板，不抢焦点。贴上即自动 Pin；面板里的卡保留并带 note 标记；卡被删便签同删。层级逐张决定（便签底部的图层键 / 右键）：浮于窗口上（默认，拖出时一定看得见）或仅桌面显示（桌面图标之上、所有应用窗口之下）；所有 Space 可见。发现路径：欢迎卡「试一试」多一条、卡片右键「贴到桌面」、以及首次启动本版本时种进历史的 Pin 卡「Pastory 怎么用」（`Shelf/HowToCard.swift`，普通卡片，删了不再出现）。位置存在偏好 `desktopNotes`，启动恢复并夹回可见屏幕。`--selftest note` 渲染。
+- **桌面便签**（`Shelf/DesktopNotes.swift`、`DesktopNoteView.swift`）：把面板里的卡向上拖出面板边界即成为桌面便签（松手在面板上=取消），右键也有「贴到桌面」；便签是同一张纸卡、全文展示（文本最高屏高 60%，超出卡内滚动），底部是 编辑 / 图层 / 关闭；单击复制、双击贴进前台应用；非激活面板，不抢焦点。贴上即自动 Pin；面板里的卡保留并带 note 标记；卡被删便签同删。层级逐张决定（便签底部的图层键 / 右键）：浮于窗口上（默认，拖出时一定看得见）或仅桌面显示（桌面图标之上、所有应用窗口之下）；所有 Space 可见。发现路径：欢迎卡「试一试」多一条、卡片右键「贴到桌面」、以及首次启动本版本时种进历史的 Pin 卡「笺湾怎么用」（`Shelf/HowToCard.swift`，普通卡片，删了不再出现）。位置存在偏好 `desktopNotes`，启动恢复并夹回可见屏幕。`--selftest note` 渲染。
 - **面板键盘**：双击 = 复制、收起并粘贴到刚才的应用；⏎ = 复制并收起，只有设置选了「双击 + 回车」且这张卡是用方向键亲手选中的才同样粘贴（搜索、筛选、删除后自动落到的高亮都不算；点击卡片后键盘会交还给原应用，所以鼠标选中后的回车到不了面板）；← → ↑ ↓ 选；空格 Quick Look；⌘P Pin；⌘S 保存到本地；⌫ 删除（Pin 项确认）；⌘F 搜索；直接打字即搜索；⎋ 依次关闭重命名框 / 返回 / 清空搜索 / 收起。设置页打开时只认 ⎋ 和 ⌘F。
 - **合成按键只走会话层**：双击 / 回车粘贴的 ⌘V 通过 `CGEvent` 发到 `.cgSessionEventTap`，发送前等用户的修饰键全部松开，发送期间屏蔽本地键盘事件。**绝不发到 `.cghidEventTap`**：那一层参与系统对物理键盘的记账，曾让 Command 键整机卡住直到重启。
 - **截图流程**：按键瞬间先把鼠标所在屏幕冻结成图，再弹选择层；选择层是 `.nonactivatingPanel`、`CGShieldingWindowLevel()`，画面冻结之后才激活自己并让选择层成为 key window：前台应用此时收起的菜单 / 下拉已经在照片里，而系统不允许后台应用改光标，不激活就没有十字光标（实测私有的 SetsCursorInBackground 也无效）。结束时把焦点还给原来的应用。⎋ 空格 F ⏎ 仍由无修饰键的 Carbon 热键兜底，标注器出现后解绑。截图中再按截图键 = 重新框选；打开着的识别文字面板降到普通层级留在原地，可以被截。取图像素比以 `NSScreen.backingScaleFactor` 为准。
@@ -112,16 +112,16 @@ PASTORY_LANG=en …                                        # 任何渲染类自�
 - **外部截图工具的图**：位图 + 一个图片文件 URL 同时上剪贴板（微信 / 飞书 / CleanShot 的做法），或只有一个临时目录里的图片文件，都按图片入库；Finder 复制文件（无位图）是文件条目。规则在 `ClipboardMonitor.ingest`，`--selftest ingest` 覆盖。
 - **录屏入口**：无论先点 录屏 还是先选区，选完都停在「录制就绪」态：框和手柄照常可调、标注工具隐藏、下方一条「拖动边框调整录制范围 · 取消 · 开始录制 ⏎」；顶部 截屏 / 录屏 随时互切。只有点「开始录制」、⏎ 或双击才真正开录。
 - **录屏**：SCStream 帧直接进 `AVAssetWriter`，30 fps，原生像素，平均码率每像素每帧 H.264 0.1 / HEVC 0.065 bit，夹在 3–30 Mbps；停止时把最后一帧再补一次。上限 10 分钟。GIF 预算按时长阶梯（≤10 s 6 MB、≤30 s 10 MB、≤60 s 15 MB、更长 20 MB），从长边 1280、10 fps 起步，先降帧率再缩尺寸。录屏启动窗口期点「丢弃」也必须停掉采集流。
-- **导入**（`Clipboard/Importer.swift`）：永远在临时副本上读；Pastory 库按 schema 精确导，Paste（wiheads）有专门读法，其他 SQLite 按启发式；目录扫描按文件头识别、最多三层、超过 6 个库或过宽目录（家目录、Library 等）直接拒绝；id / ext 含 `/` 或 `..` 的行跳过。导入的一批整体排在自己记录之后；保留期不是「永不删除」时只给「导入并改为永不删除」。
+- **导入**（`Clipboard/Importer.swift`）：永远在临时副本上读；JotCove 库按 schema 精确导，Paste（wiheads）有专门读法，其他 SQLite 按启发式；目录扫描按文件头识别、最多三层、超过 6 个库或过宽目录（家目录、Library 等）直接拒绝；id / ext 含 `/` 或 `..` 的行跳过。导入的一批整体排在自己记录之后；保留期不是「永不删除」时只给「导入并改为永不删除」。
 - **双语**（`App/Localization.swift`）：一张 `(中文, English)` 对表，键就是代码里的中文字面量，`"…".l`，带上下文的键写成 `tab|图片` 并用 `"图片".l("tab")`。新增文案 = 写中文字面量 + `.l` + 表里加一行。`--selftest l10n` 守重复键（重复键会让英文环境启动即崩）。中文用「」和全角标点，英文用 ASCII 标点。`ClipStore.importSourceName`（"导入"）是存库标记，永不翻译，显示走「已导入」。
-- **权限**：屏幕录制在第一次截图时请求（不在启动时）；系统弹窗每次启动最多一次，之后被拒时弹自家提示，第一个按钮是「重新启动 Pastory」（授权只对新进程生效）。辅助功能只用于双击 / 回车粘贴，缺失时退化为只复制并收起。从终端直接启动的 Pastory 权限会记在终端名下，正式使用要从 Finder / 启动台打开。
+- **权限**：屏幕录制在第一次截图时请求（不在启动时）；系统弹窗每次启动最多一次，之后被拒时弹自家提示，第一个按钮是「重新启动 JotCove」（授权只对新进程生效）。辅助功能只用于双击 / 回车粘贴，缺失时退化为只复制并收起。从终端直接启动的 JotCove 权限会记在终端名下，正式使用要从 Finder / 启动台打开。
 - **性能**：面板启动时预建；缩略图后台解码、缓存超 100 张淘汰最老的三分之一；全文读取、归一化和匹配在 `ClipSearchIndex` actor 中执行，空查询后台预热，输入防抖 80 ms 并取消旧查询。缓存按内容哈希与可搜索元数据失效，Pin / 复制不重读正文；匹配是对小写、预组合文本的字面量搜索，不按字素簇严格比较（👍 能搜到 👍🏽，👩 能搜到 👨‍👩‍👧）。界面只读结果快照，查询或数据版本不匹配时不允许粘贴旧结果，筛选列表和计数按版本缓存；设置页的权限徽标 1 秒轮询。
 
 ## 视觉
 
 纸感：可可棕桌面（#4B382F）+ 米灰纸片（#F0ECE4），当前剪贴板卡片和导航选中态使用雾霾蓝（#BDCDD5）。文字为深棕墨色；紫、黄、浅绿和薄荷绿用于卡片类型标记、复制状态与小面积点缀。纹理与阴影保持轻量。颜色统一由 `App/Theme.swift` 提供。
 
-人物素材位于 `Resources/Identity/`，由 `build.sh` 随包复制：侧栏使用用户提供的棕衣卡通人物，欢迎卡、空状态、设置页使用头像；不从网络加载。正文宋体，标题和「Pastory」字样手写体 Caveat。标注画笔原有颜色保持不变，首个紫色采用雾霾紫。品牌形象与配色变更见 `redev-docs/PERSONAL-STYLE.md`。
+人物素材位于 `Resources/Identity/`，由 `build.sh` 随包复制：侧栏使用用户提供的棕衣卡通人物，欢迎卡、空状态、设置页使用头像；不从网络加载。正文宋体，标题和「JotCove」字样手写体 Caveat。标注画笔原有颜色保持不变，首个紫色采用雾霾紫。品牌规范见 [BRAND.md](BRAND.md)，早期配色记录保留在 `redev-docs/PERSONAL-STYLE.md`。
 
 
 ## 已知边界
@@ -129,8 +129,12 @@ PASTORY_LANG=en …                                        # 任何渲染类自�
 - 选区不跨显示器。
 - 不做条目合并 / 拼接；不做鼠标高亮、缩放、剪辑。
 - 文件条目只存路径引用，源文件删了卡片就失效。
-- 不上云；要跨设备自行把存储目录放进 iCloud Drive，或用「导入」把另一台机器的 Pastory 文件夹导过来（文本 / 链接 / 图片）。
+- 不上云；要跨设备自行把存储目录放进 iCloud Drive，或用「导入」把另一台机器的 JotCove 文件夹导过来（文本 / 链接 / 图片）。
 
 ## 公开分发入口
 
 默认分支 `main` 提供当前分发版本；最初备份固定在 `backup/pre-style-2026-10-23`，不再用 main 表示原版。`dist.sh` 生成通用 ZIP（内含应用与首次打开说明）、单独的首次打开说明和 `SHA256SUMS.txt`。发布脚本只准备本地产物，GitHub Release 由维护者单独发布。公开产品介绍见根目录中英 README，通俗架构说明见 [ARCHITECTURE.md](ARCHITECTURE.md)。
+
+## JotCove 品牌与兼容标识
+
+产品名称为“笺湾 · JotCove”。为保留旧版数据，应用 Bundle ID、存储目录和数据库文件名继续使用既有值；详见 [BRAND.md](BRAND.md)。新增功能不要将这些兼容值当成界面标题。当前界面名称通过 `AppIdentity.displayName` 提供。菜单栏图标源码为 `scripts/MakeMenuIcon.swift`，运行时图标包由 `Resources/AppIcon.icns` 提供。

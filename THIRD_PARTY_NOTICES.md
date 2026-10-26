@@ -1,6 +1,6 @@
 # Third-party notices
 
-Pastory is developed and maintained by Evinci. This distribution includes open-source components and contributions with the following notices.
+JotCove (笺湾) is developed and maintained by Evinci. This distribution includes open-source components and contributions with the following notices.
 
 ## MIT-licensed code
 
