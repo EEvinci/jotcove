@@ -8,6 +8,7 @@ Pastory 是 macOS 15+ 的菜单栏工具：剪贴板历史面板 + 截图标注 
 
 ```
 Package.swift        macOS 15+，Swift 6 工具链、v5 语言模式
+Pastory.xcodeproj    Xcode 原生 macOS App target；日常调试入口，包含 Info.plist 与资源
 build.sh             swift build → build/Pastory.app → codesign（默认 ad-hoc，正式身份需显式指定）
 dist.sh              universal 构建 + 本地 ZIP；显式提供自己的身份与配置后才公证
 release.sh           dist.sh → 本地分发包 + 可选说明文件，不执行远端发布
@@ -28,6 +29,8 @@ redev-docs/           当前改造记录与改造前历史盘点（历史账号�
 
 ## 构建、分发、发布
 
+Xcode 开发打开 `Pastory.xcodeproj`，运行 `Pastory` scheme。原生工程与 SwiftPM 共用 `Sources/Pastory`；新增 Swift 文件会通过同步文件夹加入原生 target。资源需加入原生 target 的 Copy Bundle Resources；命令行脚本的资源复制清单也要同步维护。Info.plist 的 Bundle ID 应与原生 target 的 `PRODUCT_BUNDLE_IDENTIFIER` 保持一致。
+
 ```bash
 ./build.sh                 # 本机架构，build/Pastory.app
 ./dist.sh                  # arm64 + x86_64，默认 ad-hoc，本地 ZIP 和首次打开说明
@@ -46,6 +49,8 @@ SIGN_ID="Developer ID Application: YOUR NAME (YOURTEAMID)" NOTARY_PROFILE="your-
 只有显式提供 `NOTARY_PROFILE` 才调用苹果公证服务，且必须同时提供正式签名身份。首次打开说明根据本次是否实际完成公证生成。没有公证时可能需要在系统设置中手动允许打开。
 
 应用已移除在线更新检查、更新弹窗、更新下载器及相关菜单/设置入口。版本号只从本地 Info.plist 读取，升级通过人工替换安装包完成。
+
+可以用完整 App 的可执行文件运行 `--selftest bundle`，检查真实 `Bundle.main` 的应用标识、版本与随包资源。这个检查不会把 `AppIdentity` 的兜底值误认为系统已读取到标识。
 
 ## 存储
 
@@ -125,3 +130,7 @@ PASTORY_LANG=en …                                        # 任何渲染类自�
 - 不做条目合并 / 拼接；不做鼠标高亮、缩放、剪辑。
 - 文件条目只存路径引用，源文件删了卡片就失效。
 - 不上云；要跨设备自行把存储目录放进 iCloud Drive，或用「导入」把另一台机器的 Pastory 文件夹导过来（文本 / 链接 / 图片）。
+
+## 公开分发入口
+
+默认分支 `main` 提供当前分发版本；最初备份固定在 `backup/pre-style-2026-10-23`，不再用 main 表示原版。`dist.sh` 生成通用 ZIP（内含应用与首次打开说明）、单独的首次打开说明和 `SHA256SUMS.txt`。发布脚本只准备本地产物，GitHub Release 由维护者单独发布。公开产品介绍见根目录中英 README，通俗架构说明见 [ARCHITECTURE.md](ARCHITECTURE.md)。

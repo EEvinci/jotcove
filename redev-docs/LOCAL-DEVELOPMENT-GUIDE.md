@@ -25,20 +25,22 @@
 - 新的中英界面文字：同步维护 `Sources/Pastory/App/Localization.swift`。
 - 新功能代码按职责放进 `App`、`Shelf`、`Capture`、`Clipboard` 或 `Annotate`。当前 SwiftPM target 包含 `Sources/Pastory` 下的源码。
 
-新增图片资源时，除放进 Resources 外，还需把文件名加入 `build.sh` 的资源复制列表，并在界面代码中读取；仅将文件放入目录不会自动进入分发包。替换现有同名图片时，现有复制逻辑继续有效。
+新增图片资源时，在 Xcode 原生工程里确认文件加入 App target 的 Copy Bundle Resources；还需维护 `build.sh` 的资源复制列表，以便命令行分发也包含该资源。`Fonts`、`Identity` 以文件夹复制，目录内的新文件会一并进入包。替换现有同名图片时，现有复制逻辑继续有效。
 
 ## 开发与完整应用验证
 
-可以继续在 Xcode 中编辑、构建和运行。当前项目是 SwiftPM 可执行 target，`build.sh` 负责额外组装 Info.plist、图片、字体、LICENSE 与签名，生成完整 `.app`。
+Xcode 日常开发请打开 `Pastory.xcodeproj`，选择 `Pastory` scheme 和 `My Mac`，再按 ⌘R。该原生 macOS App target 会生成完整 `.app`，包含 Info.plist、图片、字体、Identity 素材和许可说明，不要求付费开发者账号。
 
-在项目根目录执行：
+`Package.swift` 仍保留，供 SwiftPM 和现有命令行脚本使用；不要把直接打开 Package.swift 后运行的可执行 target 当作完整 App 调试入口。它缺少 App 容器时，系统可能读不到 Bundle ID，应用内兜底字符串不能替代真正的 bundle 元数据。排查记录见 [Xcode App 容器修正](XCODE-APP-BUNDLE-FIX.md)。
+
+需要使用命令行构建完整应用时，`build.sh` 会组装应用信息与资源。在项目根目录执行：
 
 ```bash
 CONFIG=debug SIGN_ID=- ./build.sh
 open build/Pastory.app
 ```
 
-运行新包前先退出旧实例。验证安装行为、权限和资源显示时，使用完整 `.app`；不要把 Xcode 的可执行产物与安装后的应用混为同一个运行环境。
+运行新包前先退出旧实例。原生 Xcode App target 和脚本都生成完整 `.app`；它们的构建路径和签名可能不同，验证权限时要确认实际运行的那一份。
 
 ## 打包供他人安装
 

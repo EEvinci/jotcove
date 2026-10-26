@@ -29,6 +29,25 @@ enum SelfTest {
         Task { @MainActor in
             var ok = false
             switch cmd {
+            case "bundle":
+                // Inspect the real Foundation bundle, rather than AppIdentity's fallback.
+                let bundle = Bundle.main
+                let identifier = bundle.bundleIdentifier ?? "<missing>"
+                let version = bundle.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
+                print("bundle: \(bundle.bundleURL.path)")
+                print("identifier: \(identifier)")
+                print("version: \(version ?? "<missing>")")
+                var checks: [(String, Bool)] = [
+                    ("running inside an app bundle", bundle.bundleURL.pathExtension == "app"),
+                    ("main bundle identifier is present", bundle.bundleIdentifier?.isEmpty == false),
+                    ("local version is present", version?.isEmpty == false),
+                ]
+                for name in ["AppIcon.icns", "Logo.png", "MenuIcon.png", "Fonts/Caveat.ttf", "Identity/EvinciPortrait.png", "LICENSE", "THIRD_PARTY_NOTICES.md"] {
+                    let exists = bundle.resourceURL.map { FileManager.default.fileExists(atPath: $0.appendingPathComponent(name).path) } ?? false
+                    checks.append(("bundled resource: \(name)", exists))
+                }
+                for (name, passed) in checks { print("\(passed ? "ok  " : "FAIL") \(name)") }
+                ok = checks.allSatisfy(\.1)
             case "capture": ok = await capture(out: rest.first ?? "pastory-capture.png")
             case "ocr": ok = ocr(path: rest.first)
             case "clipboard": ok = await clipboard(seconds: Int(rest.first ?? "10") ?? 10)

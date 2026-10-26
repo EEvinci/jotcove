@@ -18,7 +18,7 @@
 
 这是 macOS 15+ 的原生菜单栏应用。Swift 是主要开发语言，SwiftUI 与 AppKit 构建界面，系统框架提供屏幕采集、媒体编码、OCR 等能力，SQLite 和文件系统保存历史。
 
-`Package.swift` 只有一个可执行 target，源码位于 `Sources/Pastory`。当前没有声明第三方包依赖，也没有独立服务器工程。
+`Package.swift` 只有一个可执行 target，源码位于 `Sources/Pastory`。后续为 Xcode 日常调试补充了共用这些源码的 `Pastory.xcodeproj` 原生 App target，确保运行时具有完整应用容器；见 [Xcode App 容器修正](XCODE-APP-BUNDLE-FIX.md)。当前没有声明第三方包依赖，也没有独立服务器工程。
 
 可以保留“界面和数据处理分别负责什么”的思路，但当前工程更适合按界面、状态与业务协调、系统能力、持久化来理解。文件后缀都是 Swift，只表示使用同一种语言，不表示职责相同。当前实现常用单例和观察状态；部分界面直接调用存储/控制器，不是严格隔离的前后端或严格 MVVM。
 

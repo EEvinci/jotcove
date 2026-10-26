@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Builds a local shareable ZIP. Signing and notarization are explicit opt-ins.
+# Build a Universal distribution with instructions and SHA-256 checksums.
+# Signing and notarization use only explicitly supplied credentials.
 set -euo pipefail
 cd "$(dirname "$0")"
 SIGN_ID="${SIGN_ID:--}"
@@ -9,68 +10,75 @@ if [ -n "$NOTARY_PROFILE" ] && [ "$SIGN_ID" = "-" ]; then
     echo "Set SIGN_ID to your Developer ID identity before requesting notarization." >&2
     exit 2
 fi
-# Universal: Intel Macs get "你无法打开这个软件" from an arm64-only binary.
 ARCHS="arm64 x86_64" SIGN_ID="$SIGN_ID" ./build.sh
-VERSION="$(/usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' build/Pastory.app/Contents/Info.plist)"
+APP="$PWD/build/Pastory.app"
+VERSION="$(/usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' "$APP/Contents/Info.plist")"
 mkdir -p dist
-rm -f "dist/Pastory-$VERSION.zip"
-xattr -cr build/Pastory.app
-ditto -c -k --sequesterRsrc --keepParent build/Pastory.app "dist/Pastory-$VERSION.zip"
+ARCHIVE="$PWD/dist/Pastory-$VERSION.zip"
 if [ -n "$NOTARY_PROFILE" ]; then
-    echo "→ notarizing as $SIGN_ID (profile $NOTARY_PROFILE)…"
-    xcrun notarytool submit "dist/Pastory-$VERSION.zip" --keychain-profile "$NOTARY_PROFILE" --wait
-    xcrun stapler staple build/Pastory.app
-    rm -f "dist/Pastory-$VERSION.zip"
-    ditto -c -k --sequesterRsrc --keepParent build/Pastory.app "dist/Pastory-$VERSION.zip"   # re-zip with the ticket inside
-    spctl --assess --type execute -vv build/Pastory.app 2>&1 | tail -2
+    # Submit the app first; the final archive is assembled after stapling.
+    ditto -c -k --sequesterRsrc --keepParent "$APP" "$ARCHIVE"
+    xcrun notarytool submit "$ARCHIVE" --keychain-profile "$NOTARY_PROFILE" --wait
+    xcrun stapler staple "$APP"
+    spctl --assess --type execute -vv "$APP"
     NOTARIZED=1
 fi
-cat > dist/首次打开.txt <<'TXT'
-Pastory 首次打开说明
+codesign --verify --deep --strict "$APP"
+
+if [ "$NOTARIZED" = "1" ]; then
+    OPEN_ZH="本次安装包已完成 Apple 公证。双击打开，按系统提示确认即可。"
+    OPEN_EN="This package has been notarized by Apple. Open it and confirm the system prompt."
+else
+    OPEN_ZH="本次安装包未经 Apple 公证。如 macOS 阻止打开，请到「系统设置 → 隐私与安全性」找到 Pastory，选择「仍要打开」，再按系统提示确认。"
+    OPEN_EN="This package is not notarized by Apple. If macOS blocks it, go to System Settings → Privacy & Security, choose Open Anyway for Pastory, and confirm the system prompt."
+fi
+cat > dist/FIRST-LAUNCH.txt <<EOF
+Pastory $VERSION · 首次打开
 由 Evinci 开发与维护。
 
-需要 macOS 15 (Sequoia) 或更新；Intel 和 Apple 芯片的 Mac 都可以。
+支持 macOS 15 或更新版本；同一个安装包支持 Apple 芯片与 Intel。
 
-1. 解压后把 Pastory.app 拖进「应用程序」文件夹。
-2. 第一次打开：双击 Pastory.app。
-   这个包已经过 Apple 公证，系统最多问一句「这是从互联网下载的应用，确定打开？」，点「打开」即可。
-3. Pastory 没有主窗口：打开后只在屏幕右上角菜单栏出现一个手写的 P 图标，第一次会自动弹出底部的剪贴板面板。
-   如果什么都没出现，先看菜单栏有没有 P。
-4. 第一次截图会请求「屏幕录制」权限：系统设置 › 隐私与安全性 › 屏幕录制，打开 Pastory，然后退出 Pastory 重新打开。
-5. 默认快捷键：⌥⌘S 截图 / 录屏，⇧⌘V 打开剪贴板。可以在剪贴板面板左侧「设置」里改。
+1. 先退出旧版 Pastory，解压后把 Pastory.app 拖入「应用程序」。
+2. $OPEN_ZH
+3. 打开后点击菜单栏的图标，或按 ⇧⌘V 显示剪贴板。完成欢迎引导后，应用不会每次自动弹出主窗口。
+4. 首次截图/录屏时授予屏幕录制权限，并按提示重新启动 Pastory。
+5. 双击直接粘贴需要辅助功能权限；未授权时仍可单击复制，再自行粘贴。
+6. 快捷键可在设置中更改：⇧⌘V 剪贴板，⌥⌘S 截图/录屏，⌥⌘F 搜索。
 
-还是打不开？在「终端」里粘贴这两行（去掉隔离标记后再打开）：
-  xattr -dr com.apple.quarantine /Applications/Pastory.app
-  open /Applications/Pastory.app
+数据在 ~/Library/Application Support/Pastory/，没有云同步、在线更新检查或剪贴板上传。
+升级前备份历史：先退出应用，再复制整个数据目录。不要同时运行多个实例操作同一目录。
+当前录屏不包含系统声音与麦克风声音。
 
-所有内容只存在本机 ~/Library/Application Support/Pastory/，不检查在线版本，不上传剪贴板数据。
-界面语言跟随系统（中文 / English），也可以在剪贴板面板 › 设置 › 语言 里改。
+项目与更新：https://github.com/EEvinci/pastory
+下载：https://github.com/EEvinci/pastory/releases/latest
 
----------------------------------------------------------------- English
-
-Pastory — first launch
+------------------------------------------------------------
+Pastory $VERSION · First launch
 Developed and maintained by Evinci.
-Requires macOS 15 (Sequoia) or later; Intel and Apple silicon.
 
-1. Unzip and drag Pastory.app into Applications.
-2. Double-click it. The app is notarized by Apple; at most macOS asks once whether to open an app
-   downloaded from the internet — click Open.
-3. Pastory has no main window: look for the handwritten P in the menu bar. The clipboard panel opens by itself on first launch.
-4. The first screenshot asks for Screen Recording permission: turn Pastory on, then relaunch it.
-5. Default shortcuts: ⌥⌘S screenshot / record, ⇧⌘V clipboard shelf. Change them in Settings.
-   Language follows the system (中文 / English) and can be switched in Settings › Language.
+Requires macOS 15 or later. One Universal app supports Apple silicon and Intel.
 
-Everything stays in ~/Library/Application Support/Pastory/ on this Mac. No online version checks or clipboard uploads.
-Still won't open? In Terminal:  xattr -dr com.apple.quarantine /Applications/Pastory.app && open /Applications/Pastory.app
-TXT
-if [ "$NOTARIZED" = "0" ]; then
-    # Not notarized: swap the two "first open" lines for the Gatekeeper walk-through.
-    sed -i '' \
-      -e 's|^2. 第一次打开：双击 Pastory.app。$|2. 第一次打开：双击 Pastory.app。系统会说「无法打开，因为 Apple 无法检查其是否包含恶意软件」，点「完成」。|' \
-      -e 's|^   这个包已经过 Apple 公证，系统最多问一句「这是从互联网下载的应用，确定打开？」，点「打开」即可。$|   再去「系统设置 › 隐私与安全性」，往下滚到底，点「仍要打开」，输入一次密码。（这个包未经公证，只需处理这一次。）|' \
-      -e 's|^2. Double-click it. The app is notarized by Apple; at most macOS asks once whether to open an app$|2. Double-click it. macOS will say it cannot verify the app: click Done, then System Settings › Privacy \& Security,|' \
-      -e 's|^   downloaded from the internet — click Open.$|   scroll to the bottom and click "Open Anyway" (password once). This build is not notarized; it happens only the first time.|' \
-      dist/首次打开.txt
-fi
-echo "→ dist/Pastory-$VERSION.zip ($(du -h "dist/Pastory-$VERSION.zip" | cut -f1))"
-if [ "$NOTARIZED" = "1" ]; then echo "  notarized & stapled"; fi
+1. Quit any old Pastory instance. Unzip and drag Pastory.app into Applications.
+2. $OPEN_EN
+3. Click its menu bar icon or press ⇧⌘V to show the clipboard. After onboarding, no main window opens automatically on every launch.
+4. Grant Screen Recording permission when first capturing or recording, then relaunch when prompted.
+5. Direct pasting needs Accessibility permission. Without it, click to copy and paste manually.
+6. Change shortcuts in Settings: ⇧⌘V clipboard, ⌥⌘S capture/record, ⌥⌘F search.
+
+Data stays in ~/Library/Application Support/Pastory/. No cloud sync, update checks or clipboard uploads.
+Quit before backing up the entire data directory. Do not run multiple instances against the same directory.
+Recordings currently contain no system or microphone audio.
+
+Project: https://github.com/EEvinci/pastory
+Downloads: https://github.com/EEvinci/pastory/releases/latest
+EOF
+
+STAGE="$(mktemp -d "$PWD/dist/package.XXXXXX")"
+trap 'rm -rf "$STAGE"' EXIT
+ditto "$APP" "$STAGE/Pastory.app"
+cp dist/FIRST-LAUNCH.txt "$STAGE/FIRST-LAUNCH.txt"
+rm -f "$ARCHIVE"
+(cd "$STAGE" && ditto -c -k --sequesterRsrc . "$ARCHIVE")
+(cd dist && shasum -a 256 "Pastory-$VERSION.zip" FIRST-LAUNCH.txt > SHA256SUMS.txt)
+echo "→ $ARCHIVE"
+echo "→ dist/FIRST-LAUNCH.txt + dist/SHA256SUMS.txt"
